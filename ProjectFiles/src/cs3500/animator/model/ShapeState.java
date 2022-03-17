@@ -42,6 +42,10 @@ public class ShapeState {
     this.color = color;
   }
 
+  public ShapeState copy() {
+    return new ShapeState(time, ctrX, ctrY, dimW, dimH, color.copy());
+  }
+
   public ShapeState stall(int startTime, int endTime) {
     if (startTime < 0) {
       throw new IllegalArgumentException("Invalid Start Time, Start time is negative.");

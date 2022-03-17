@@ -2,7 +2,10 @@ package cs3500.animator.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Simple Implementation of the animator model.
@@ -63,6 +66,20 @@ public class AnimatorModelImpl implements AnimatorModel<Shape, ShapeState> {
         motions.add(end);
       }
     }
+  }
+
+  @Override
+  public Set getShapeSet() {
+    Set<Shape> set = new HashSet<Shape>();
+    for (Shape s : this.animations.keySet()) {
+      set.add(s.copy());
+    }
+    return new HashSet(this.animations.keySet());
+  }
+
+  @Override
+  public List getShapeMotions(Shape s) {
+    return (ArrayList<ShapeState>)this.animations.get(s).clone();
   }
 
   @Override

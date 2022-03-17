@@ -15,5 +15,5 @@ public interface AnimatorView {
   /**
    * Renders the state of the animator model.
    */
-  void viewState();
+  void viewState() throws IOException;
 }

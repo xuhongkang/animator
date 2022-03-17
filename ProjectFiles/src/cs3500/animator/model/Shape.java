@@ -23,6 +23,10 @@ public class Shape {
     this.shape = shape;
   }
 
+  public Shape copy() {
+    return new Shape(this.tag, this.shape.copy());
+  }
+
   public String getTag() {
     return this.tag;
   }

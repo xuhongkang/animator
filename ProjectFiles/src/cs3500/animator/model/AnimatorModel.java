@@ -1,6 +1,8 @@
 package cs3500.animator.model;
 
 import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Basic Model for Animator, Handles data and operations.
@@ -16,6 +18,10 @@ public interface AnimatorModel<T,V> {
    * @param bShape is a basic shape
    */
   void createShape(String tag, BasicShape bShape);
+
+  Set getShapeSet();
+
+  List getShapeMotions(Shape s);
 
   HashMap getAnimations();
 

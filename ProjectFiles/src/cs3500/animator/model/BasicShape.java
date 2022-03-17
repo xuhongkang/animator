@@ -18,4 +18,17 @@ public enum BasicShape {
       throw new IllegalArgumentException("Not a Valid Basic Shape");
     }
   }
+
+  public BasicShape copy() {
+    if (this.equals(RECTANGLE)) {
+      return RECTANGLE;
+    } else if (this.equals(OVAL)) {
+      return OVAL;
+    } else if (this.equals(TRIANGLE)) {
+      return TRIANGLE;
+    } else {
+      throw new IllegalArgumentException("Not a Valid Basic Shape");
+    }
+  }
 }
+

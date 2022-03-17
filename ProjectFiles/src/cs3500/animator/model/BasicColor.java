@@ -22,6 +22,10 @@ public class BasicColor {
     this.setValue(s);
   }
 
+  public BasicColor copy() {
+    return new BasicColor(this.rValue, this.gValue, this.bValue);
+  }
+
   public int getRValue() {
     return this.rValue;
   }
