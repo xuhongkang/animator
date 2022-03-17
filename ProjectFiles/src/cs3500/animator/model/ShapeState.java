@@ -15,7 +15,7 @@ public class ShapeState {
    * Constructor of ShapeState.
    * @throws IllegalArgumentException if color is invalid.
    */
-  public ShapeState(int ctrX, int ctrY, int dimW, int dimH, BasicColor color) {
+  public ShapeState(int time, int ctrX, int ctrY, int dimW, int dimH, BasicColor color) {
     if (time < 0) {
       throw new IllegalArgumentException("Invalid time, time is negative.");
     }
@@ -34,6 +34,7 @@ public class ShapeState {
     if (color == null) {
       throw new IllegalArgumentException("Invalid color, color is Null.");
     }
+    this.time = time;
     this.ctrX = ctrX;
     this.ctrY = ctrY;
     this.dimW = dimW;
@@ -41,8 +42,31 @@ public class ShapeState {
     this.color = color;
   }
 
+  public ShapeState stall(int startTime, int endTime) {
+    if (startTime < 0) {
+      throw new IllegalArgumentException("Invalid Start Time, Start time is negative.");
+    }
+    if (endTime < 0) {
+      throw new IllegalArgumentException("Invalid End Time, End Time is negative.");
+    }
+    if (startTime > endTime) {
+      throw new IllegalArgumentException("Invalid End Time, Start time is greater than End Time");
+    }
+    if (this.getTime() != startTime) {
+      throw new IllegalArgumentException("Starting Parameters did not match the Last State.");
+    } else {
+      return new ShapeState(endTime, this.ctrX, this.ctrY, this.dimW, this.dimH, this.color);
+    }
+  }
+
+  public int getTime() {
+    return this.time;
+  }
+
   @Override
   public String toString() {
-
+    return String.format("%3d %3d %3d %3d %3d %3d %3d %3d", this.time, this.ctrX, this.ctrY,
+            this.dimW, this.dimH, this.color.getRValue(), this.color.getGValue(),
+            this.color.getBValue());
   }
 }

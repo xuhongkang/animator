@@ -22,4 +22,12 @@ public class Shape {
     this.tag = tag;
     this.shape = shape;
   }
+
+  public String getTag() {
+    return this.tag;
+  }
+
+  public String toString() {
+    return String.format("shape %s %s", this.shape.toString(), this.tag);
+  }
 }

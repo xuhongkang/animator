@@ -2,6 +2,7 @@ package cs3500.animator.controller;
 
 import cs3500.animator.model.AnimatorModel;
 import cs3500.animator.model.Shape;
+import cs3500.animator.model.ShapeState;
 import cs3500.animator.view.AnimatorView;
 
 /**
@@ -11,7 +12,7 @@ public class AnimatorControllerImpl implements AnimatorController {
   private Readable input;
   private Appendable output;
   private AnimatorView view;
-  private AnimatorModel<Shape, Motion> model;
+  private AnimatorModel<Shape, ShapeState> model;
 
   /**
    * Constructor for animator controller implementation.

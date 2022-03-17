@@ -22,6 +22,18 @@ public class BasicColor {
     this.setValue(s);
   }
 
+  public int getRValue() {
+    return this.rValue;
+  }
+
+  public int getGValue() {
+    return this.gValue;
+  }
+
+  public int getBValue() {
+    return this.bValue;
+  }
+
   public void setValue(String s) {
     switch(s) {
       case "Green":
