@@ -60,14 +60,14 @@ public class BasicColor {
    * @param b is the blue value
    */
   public void setValue(int r, int g, int b) {
-    if (r < 0 | r < 255) {
+    if (r < 0 | r > 255) {
       throw new IllegalArgumentException("Invalid r, Value Out of Bounds.");
     }
-    if (g < 0 | g < 255) {
-      throw new IllegalArgumentException("Invalid r, Value Out of Bounds.");
+    if (g < 0 | g > 255) {
+      throw new IllegalArgumentException("Invalid g, Value Out of Bounds.");
     }
-    if (b < 0 | b < 255) {
-      throw new IllegalArgumentException("Invalid r, Value Out of Bounds.");
+    if (b < 0 | b > 255) {
+      throw new IllegalArgumentException("Invalid b, Value Out of Bounds.");
     }
     this.rValue = r;
     this.gValue = g;

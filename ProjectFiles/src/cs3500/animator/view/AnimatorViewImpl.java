@@ -46,7 +46,8 @@ public class AnimatorViewImpl implements AnimatorView {
 
   @Override
   public void viewState() throws IOException {
-    String legend = "# t == tick\n" +
+    String legend = "# [LEGEND]\n" +
+                    "# t == tick\n" +
                     "# (x,y) == position\n" +
                     "# (w,h) == dimensions\n" +
                     "# (r,g,b) == color (with values between 0 and 255)\n";
@@ -58,7 +59,7 @@ public class AnimatorViewImpl implements AnimatorView {
       for (Shape s : shapes) {
         this.viewMessage(s.toString());
         String sTag = s.getTag();
-        String motionMessage = String.format("motion %s ", sTag);
+        String motionMessage = String.format("motion %s   ", sTag);
         String motionMessageIndent = " ".repeat(motionMessage.length());
         List<ShapeState> motions = this.model.getShapeMotions(s);
         if (motions.isEmpty()){
@@ -84,7 +85,7 @@ public class AnimatorViewImpl implements AnimatorView {
               lines += motionMessage + motions.get(i).toString();
             }
           }
-          this.viewMessage(lines);
+          this.viewMessage(lines + "\n");
         }
       }
     }

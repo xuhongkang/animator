@@ -69,7 +69,7 @@ public class ShapeState {
 
   @Override
   public String toString() {
-    return String.format("%3d %3d %3d %3d %3d %3d %3d %3d", this.time, this.ctrX, this.ctrY,
+    return String.format("%-3d %-3d %-3d %-3d %-3d %-3d %-3d %-3d", this.time, this.ctrX, this.ctrY,
             this.dimW, this.dimH, this.color.getRValue(), this.color.getGValue(),
             this.color.getBValue());
   }
