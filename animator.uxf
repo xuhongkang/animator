@@ -1,13 +1,8 @@
-<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>20</x><y>10</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;Stereotype&gt;&gt;
-Package::FatClass
-{Some Properties}
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>20</x><y>10</y><w>210</w><h>120</h></coordinates><panel_attributes>&lt;&lt;AnimatorModel&gt;&gt;
+Package::cs300.animator.model
 --
 -id: Long
-_-ClassAttribute: Long_
+-ClassAttribute: Long
 --
-#Operation(i: int): int
-/+AbstractOperation()/
---
-Responsibilities
--- Resp1
-*-- Resp2*</panel_attributes><additional_attributes></additional_attributes></element></diagram>
+Operation(i: int): int
+AbstractOperation()/</panel_attributes><additional_attributes></additional_attributes></element></diagram>
