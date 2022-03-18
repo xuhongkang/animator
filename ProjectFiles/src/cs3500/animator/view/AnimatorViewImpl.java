@@ -5,21 +5,20 @@ import java.util.List;
 import java.util.Set;
 
 import cs3500.animator.model.AnimatorModel;
-import cs3500.animator.model.Shape;
 import cs3500.animator.model.ShapeState;
 
 /**
  * Basic View Implementation for animator.
  */
 public class AnimatorViewImpl implements AnimatorView {
-  private AnimatorModel<Shape, ShapeState> model;
+  private AnimatorModel<String, ShapeState> model;
   private Appendable output;
 
   /**
    * Alternative constructor for Animator View Implementation.
    * @param model
    */
-  public AnimatorViewImpl(AnimatorModel<Shape, ShapeState> model) {
+  public AnimatorViewImpl(AnimatorModel<String, ShapeState> model) {
     this(model, System.out);
   }
 
@@ -28,7 +27,7 @@ public class AnimatorViewImpl implements AnimatorView {
    * @param model
    * @param output
    */
-  public AnimatorViewImpl(AnimatorModel<Shape, ShapeState> model, Appendable output) {
+  public AnimatorViewImpl(AnimatorModel<String, ShapeState> model, Appendable output) {
     if (model == null) {
       throw new IllegalArgumentException("Invalid Model, Model is Null.");
     }
@@ -51,17 +50,16 @@ public class AnimatorViewImpl implements AnimatorView {
                     "# (x,y) == position\n" +
                     "# (w,h) == dimensions\n" +
                     "# (r,g,b) == color (with values between 0 and 255)\n";
-    Set<Shape> shapes = this.model.getShapeSet();
-    if (shapes.isEmpty()) {
+    Set<String> tags = this.model.getTags();
+    if (tags.isEmpty()) {
       viewMessage("No Shapes or Motions Initialized.");
     } else {
       this.viewMessage(legend);
-      for (Shape s : shapes) {
-        this.viewMessage(s.toString());
-        String sTag = s.getTag();
-        String motionMessage = String.format("motion %s   ", sTag);
+      for (String t: tags) {
+        this.viewMessage(String.format("shape %s %s", model.getShapes().get(t).toString(), t));
+        String motionMessage = String.format("motion %s   ", t);
         String motionMessageIndent = " ".repeat(motionMessage.length());
-        List<ShapeState> motions = this.model.getShapeMotions(s);
+        List<ShapeState> motions = this.model.getMotions(t);
         if (motions.isEmpty()){
           // Skip a line
           this.viewMessage("");

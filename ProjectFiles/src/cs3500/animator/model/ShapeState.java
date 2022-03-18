@@ -1,5 +1,7 @@
 package cs3500.animator.model;
 
+import java.util.Objects;
+
 /**
  * Representation of the state of a shape.
  */
@@ -65,6 +67,43 @@ public class ShapeState {
 
   public int getTime() {
     return this.time;
+  }
+
+  public int getCtrX() {
+    return ctrX;
+  }
+
+  public int getCtrY() {
+    return ctrY;
+  }
+
+  public int getDimW() {
+    return dimW;
+  }
+
+  public int getDimH() {
+    return dimH;
+  }
+
+  public BasicColor getColor() {
+    return color;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o != null) {
+      if (o instanceof ShapeState) {
+        ShapeState that = (ShapeState) o;
+        return this.time == that.time && this.ctrX == that.ctrX && this.ctrY == that.ctrY &&
+                this.dimW == that.dimW && this.color == that.color;
+      }
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(this.time, this.ctrX, this.ctrY, this.dimW, this.dimH, this.color);
   }
 
   @Override

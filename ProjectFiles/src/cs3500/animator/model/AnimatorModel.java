@@ -1,5 +1,6 @@
 package cs3500.animator.model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
@@ -19,17 +20,24 @@ public interface AnimatorModel<T,V> {
    */
   void createShape(String tag, BasicShape bShape);
 
-  Set getShapeSet();
+  Set getTags();
 
-  List getShapeMotions(Shape s);
+  List getMotions(String tag);
 
-  HashMap getAnimations();
+  HashMap<String, ArrayList<ShapeState>> getAnimations();
 
-  void doNothing(String tag, BasicShape bShape, int startTime, int endTime);
+  HashMap<String, BasicShape> getShapes();
+
+  void doNothing(String tag, int startTime, int endTime);
+
+  /**
+   * ONLY FOR TESTING MAJOR VULNERABILITY DELETE ON SUBMISSION!
+   */
+  void addState(String tag, ShapeState... states);
 
   /**
    * Adds a new motion to an existing shape.
    * @throws IllegalArgumentException if shape is not initialized or if parameters are invalid.
    */
-  void addMotion(String tag, BasicShape bShape, ShapeState start, ShapeState end);
+  void addMotion(String tag, Motion m);
 }
