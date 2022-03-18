@@ -20,6 +20,14 @@ public interface AnimatorModel<T,V> {
    */
   void createShape(String tag, BasicShape bShape);
 
+  /**
+   * Adds a new motion to an existing shape.
+   * @throws IllegalArgumentException if shape is not initialized or if parameters are invalid.
+   */
+  void addMotion(String tag, Motion m);
+
+  void doNothing(String tag, int startTime, int endTime);
+
   Set getTags();
 
   List getMotions(String tag);
@@ -28,16 +36,8 @@ public interface AnimatorModel<T,V> {
 
   HashMap<String, BasicShape> getShapes();
 
-  void doNothing(String tag, int startTime, int endTime);
-
   /**
    * ONLY FOR TESTING MAJOR VULNERABILITY DELETE ON SUBMISSION!
    */
   void addState(String tag, ShapeState... states);
-
-  /**
-   * Adds a new motion to an existing shape.
-   * @throws IllegalArgumentException if shape is not initialized or if parameters are invalid.
-   */
-  void addMotion(String tag, Motion m);
 }

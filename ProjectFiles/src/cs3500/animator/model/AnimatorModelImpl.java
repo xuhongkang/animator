@@ -140,6 +140,9 @@ public class AnimatorModelImpl implements AnimatorModel<BasicShape, ShapeState> 
                 "Please Initialize First");
       }
     }
+    if (m.getStartTime() == null) {
+      m.setStartTime(prev.getTime());
+    }
     if (m.getStartX() == null) {
       m.setStartX(prev.getCtrX());
     }
@@ -154,6 +157,9 @@ public class AnimatorModelImpl implements AnimatorModel<BasicShape, ShapeState> 
     }
     if (m.getStartC() == null) {
       m.setStartC(prev.getColor());
+    }
+    if (m.getEndTime() == null) {
+      throw new IllegalArgumentException("End Time must be provided, given Null.");
     }
     if (m.getEndX() == null) {
       m.setEndX(m.getStartX());

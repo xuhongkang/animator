@@ -67,7 +67,7 @@ public class AnimatorViewImplTest {
   }
 
   @Test
-  public void testViewDetailed() throws IOException {
+  public void testAddMotion() throws IOException {
     model1.createShape("R", BasicShape.RECTANGLE);
     model1.addMotion(tag1, m1);
     model1.addMotion(tag1, m2);
