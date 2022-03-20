@@ -42,16 +42,21 @@ public class BasicColor {
 
   public void setValue(String s) {
     switch(s) {
-      case "Green":
-        this.setValue(0, 255, 0);
       case "Red":
         this.setValue(255, 0, 0);
+        break;
+      case "Green":
+        this.setValue(0, 255, 0);
+        break;
       case "Blue":
         this.setValue(0, 0, 255);
+        break;
       case "Yellow":
         this.setValue(255, 255, 0);
+        break;
       case "Purple":
         this.setValue(255, 0, 255);
+        break;
       default:
         throw new IllegalArgumentException("Invalid Color, unable to Identify.");
     }

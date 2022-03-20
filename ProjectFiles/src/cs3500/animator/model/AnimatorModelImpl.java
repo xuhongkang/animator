@@ -39,27 +39,20 @@ public class AnimatorModelImpl implements AnimatorModel<BasicShape, ShapeState> 
   }
 
   @Override
-  public void doNothing(String tag, int startTime, int endTime) {
-    this.isValidTag(tag);
+  public void addMotion(Motion m) {
+    String tag = m.getTag();
+    if (tag == null) {
+      throw new IllegalArgumentException("Tag cannot be null.");
+    }
     if (!this.shapes.containsKey(tag)) {
       throw new IllegalArgumentException("Animations does not contain target Shape, " +
               "Please Initialize First.");
     }
-    ArrayList<ShapeState> motions = this.animations.get(tag);
-    if (motions.isEmpty()) {
-      throw new IllegalArgumentException("Cannot stall when not Initialized, " +
-              "Please Initialize First");
-    } else {
-      ShapeState lastState = motions.get(motions.size() - 1);
-      motions.add(lastState.stall(startTime, endTime));
-    }
-  }
-
-  @Override
-  public void addMotion(String tag, Motion m) {
-    if (!this.shapes.containsKey(tag)) {
-      throw new IllegalArgumentException("Animations does not contain target Shape, " +
-              "Please Initialize First.");
+    BasicShape shape = m.getShape();
+    if (shape != null) {
+      if (!this.shapes.get(tag).equals(shape)) {
+        throw new IllegalArgumentException("BasicShape does not match corresponding Tag.");
+      }
     }
     ArrayList<ShapeState> motions = this.animations.get(tag);
     if (motions.isEmpty()) {

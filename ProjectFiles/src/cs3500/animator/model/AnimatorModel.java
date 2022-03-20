@@ -24,9 +24,7 @@ public interface AnimatorModel<T,V> {
    * Adds a new motion to an existing shape.
    * @throws IllegalArgumentException if shape is not initialized or if parameters are invalid.
    */
-  void addMotion(String tag, Motion m);
-
-  void doNothing(String tag, int startTime, int endTime);
+  void addMotion(Motion m);
 
   Set getTags();
 

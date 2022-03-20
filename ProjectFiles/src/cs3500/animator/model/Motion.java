@@ -1,6 +1,8 @@
 package cs3500.animator.model;
 
 public class Motion {
+  private String tag;
+  private BasicShape shape;
   private Integer startTime;
   private Integer endTime;
   private Integer startX;
@@ -15,6 +17,8 @@ public class Motion {
   private BasicColor endC;
 
   public static class MotionBuilder {
+    private String tag;
+    private BasicShape shape;
     private Integer startTime;
     private Integer endTime;
     private Integer startX;
@@ -29,6 +33,8 @@ public class Motion {
     private BasicColor endC;
 
     public MotionBuilder() {
+      BasicShape shape = null;
+      String tag = null;
       Integer startTime = null;
       Integer endTime = null;
       Integer startX = null;
@@ -41,6 +47,12 @@ public class Motion {
       Integer endH = null;
       BasicColor startC = null;
       BasicColor endC = null;
+    }
+
+    public MotionBuilder setTag(String tag, BasicShape shape) {
+      this.tag = tag;
+      this.shape = shape;
+      return this;
     }
 
     public MotionBuilder setTime(int startTime, int endTime) {
@@ -89,6 +101,8 @@ public class Motion {
   }
 
   private Motion(MotionBuilder b) {
+    this.tag = b.tag;
+    this.shape = b.shape;
     this.startTime = b.startTime;
     this.endTime = b.endTime;
     this.startX = b.startX;
@@ -102,6 +116,10 @@ public class Motion {
     this.startC = b.startC;
     this.endC = b.endC;
   }
+
+  public String getTag() {return tag;}
+
+  public BasicShape getShape() {return shape;}
 
   public Integer getStartTime() {
     return startTime;
@@ -150,6 +168,10 @@ public class Motion {
   public BasicColor getEndC() {
     return endC;
   }
+
+  public void setTag(String tag) {this.tag = tag;}
+
+  public void setShape(BasicShape shape) {this.shape = shape;}
 
   public void setStartTime(Integer startTime) {
     this.startTime = startTime;

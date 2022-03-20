@@ -41,15 +41,15 @@ public class AnimatorViewImplTest {
     tag2 = "C";
     bs1 = BasicShape.RECTANGLE;
     bs2 = BasicShape.OVAL;
-    m1 = new Motion.MotionBuilder().setTime(1,10).setStartXY(50,200)
+    m1 = new Motion.MotionBuilder().setTag(tag1, null).setTime(1,10).setStartXY(50,200)
             .setStartWH(50,100).setStartColor(new BasicColor("Red"))
             .setEndXY(200,200).build();
-    m2 = new Motion.MotionBuilder().setTime(10,50).setEndXY(300,300).build();
+    m2 = new Motion.MotionBuilder().setTag(tag1, null).setTime(10,50).setEndXY(300,300).build();
     ss1 = new ShapeState(1, 50, 200, 50, 100, new BasicColor("Red"));
     ss2 = new ShapeState(10, 200, 200, 50, 100, new BasicColor("Red"));
     ss3 = new ShapeState(50, 300, 300, 50, 100, new BasicColor("Red"));
 
-    m3 = new Motion.MotionBuilder().setTime(6,40).setStartXY(440,70)
+    m3 = new Motion.MotionBuilder().setTag(tag2, null).setTime(6,40).setStartXY(440,70)
             .setStartWH(120,60).setStartColor(new BasicColor("Blue")).build();
     ss4 = new ShapeState(6, 440, 70, 120, 60, new BasicColor("Blue"));
     ss5 = new ShapeState(40, 440, 70, 120, 60, new BasicColor("Blue"));
@@ -58,10 +58,10 @@ public class AnimatorViewImplTest {
   @Test
   public void testView() throws IOException {
     model1.createShape("R", BasicShape.RECTANGLE);
-    model1.addMotion(tag1, m1);
-    model1.addMotion(tag1, m2);
+    model1.addMotion(m1);
+    model1.addMotion(m2);
     model1.createShape("C", BasicShape.OVAL);
-    model1.addMotion(tag2, m3);
+    model1.addMotion(m3);
     view1 = new AnimatorViewImpl(model1,System.out);
     view1.viewState();
   }
@@ -69,10 +69,10 @@ public class AnimatorViewImplTest {
   @Test
   public void testAddMotion() throws IOException {
     model1.createShape("R", BasicShape.RECTANGLE);
-    model1.addMotion(tag1, m1);
-    model1.addMotion(tag1, m2);
+    model1.addMotion(m1);
+    model1.addMotion(m2);
     model1.createShape("C", BasicShape.OVAL);
-    model1.addMotion(tag2, m3);
+    model1.addMotion(m3);
     model2.createShape("R", BasicShape.RECTANGLE);
     model2.addState(tag1, ss1, ss2, ss3);
     model2.createShape("C", BasicShape.OVAL);
