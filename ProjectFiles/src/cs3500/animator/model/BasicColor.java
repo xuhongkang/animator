@@ -1,5 +1,7 @@
 package cs3500.animator.model;
 
+import java.util.Objects;
+
 /**
  * Basic representation of a shade of color.
  */
@@ -50,6 +52,8 @@ public class BasicColor {
         this.setValue(255, 255, 0);
       case "Purple":
         this.setValue(255, 0, 255);
+      default:
+        throw new IllegalArgumentException("Invalid Color, unable to Identify.");
     }
   }
 
@@ -72,5 +76,22 @@ public class BasicColor {
     this.rValue = r;
     this.gValue = g;
     this.bValue = b;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o != null) {
+      if (o instanceof BasicColor) {
+        BasicColor that = (BasicColor) o;
+        return this.rValue == that.rValue && this.gValue == that.gValue &&
+                this.bValue == that.bValue;
+      }
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(this.rValue, this.gValue, this.bValue);
   }
 }

@@ -100,7 +100,12 @@ public class AnimatorModelImpl implements AnimatorModel<BasicShape, ShapeState> 
 
   @Override
   public List<ShapeState> getMotions(String tag) {
-    return (ArrayList<ShapeState>)this.animations.get(tag).clone();
+    List<ShapeState> forCopying = this.animations.get(tag);
+    List<ShapeState> forReturning = new ArrayList<ShapeState>();
+    for (ShapeState s : forCopying) {
+      forReturning.add(s.copy());
+    }
+    return forReturning;
   }
 
   @Override
@@ -108,7 +113,11 @@ public class AnimatorModelImpl implements AnimatorModel<BasicShape, ShapeState> 
     HashMap<String, ArrayList<ShapeState>> copy = new HashMap<String, ArrayList<ShapeState>>();
     for (Map.Entry<String, ArrayList<ShapeState>> entry : this.animations.entrySet())
     {
-      copy.put(entry.getKey(), new ArrayList<ShapeState>(entry.getValue()));
+      ArrayList<ShapeState> entryValues = new ArrayList<ShapeState>();
+      for (ShapeState s : entry.getValue()) {
+        entryValues.add(s.copy());
+      }
+      copy.put(entry.getKey(), entryValues);
     }
     return copy;
   }
@@ -118,7 +127,8 @@ public class AnimatorModelImpl implements AnimatorModel<BasicShape, ShapeState> 
     HashMap<String, BasicShape> copy = new HashMap<String, BasicShape>();
     for (Map.Entry<String, BasicShape> entry : this.shapes.entrySet())
     {
-      copy.put(entry.getKey(), entry.getValue());
+      BasicShape basicShape = entry.getValue();
+      copy.put(entry.getKey(), basicShape.copy());
     }
     return copy;
   }

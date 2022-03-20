@@ -95,7 +95,7 @@ public class ShapeState {
       if (o instanceof ShapeState) {
         ShapeState that = (ShapeState) o;
         return this.time == that.time && this.ctrX == that.ctrX && this.ctrY == that.ctrY &&
-                this.dimW == that.dimW && this.color == that.color;
+                this.dimW == that.dimW && this.color.equals(that.color);
       }
     }
     return false;

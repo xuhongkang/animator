@@ -88,4 +88,11 @@ public class AnimatorViewImplTest {
 
     assertEquals(a1.toString(), a2.toString());
   }
+
+  @Test
+  public void xiaoshiyan() {
+    String ss = "";
+    String[] arr_ss = ss.split(",");
+    assertEquals(arr_ss[0],"");
+  }
 }
