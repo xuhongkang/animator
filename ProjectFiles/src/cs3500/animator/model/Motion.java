@@ -1,5 +1,8 @@
 package cs3500.animator.model;
 
+/**
+ * The class representing motions of the destined figure.
+ */
 public class Motion {
   private String tag;
   private BasicShape shape;
@@ -100,7 +103,7 @@ public class Motion {
     }
   }
 
-  private Motion(MotionBuilder b) {
+  public Motion(MotionBuilder b) {
     this.tag = b.tag;
     this.shape = b.shape;
     this.startTime = b.startTime;

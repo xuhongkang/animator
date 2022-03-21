@@ -15,22 +15,22 @@ import cs3500.animator.model.ShapeState;
 import static org.junit.Assert.assertEquals;
 
 public class AnimatorViewImplTest {
-  AnimatorModel model1;
-  AnimatorModel model2;
-  AnimatorView view1;
-  AnimatorView view2;
-  String tag1;
-  BasicShape bs1;
-  Motion m1;
-  Motion m2;
-  ShapeState ss1;
-  ShapeState ss2;
-  ShapeState ss3;
-  String tag2;
-  BasicShape bs2;
-  Motion m3;
-  ShapeState ss4;
-  ShapeState ss5;
+  private AnimatorModel model1;
+  private AnimatorModel model2;
+  private AnimatorView view1;
+  private AnimatorView view2;
+  private String tag1;
+  private BasicShape bs1;
+  private Motion m1;
+  private Motion m2;
+  private ShapeState ss1;
+  private ShapeState ss2;
+  private ShapeState ss3;
+  private String tag2;
+  private BasicShape bs2;
+  private Motion m3;
+  private ShapeState ss4;
+  private ShapeState ss5;
 
 
   @Before

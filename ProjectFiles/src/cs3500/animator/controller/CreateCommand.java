@@ -5,9 +5,9 @@ import cs3500.animator.model.BasicShape;
 import cs3500.animator.model.Motion;
 
 public class CreateCommand implements AnimatorCommand {
-  String tag;
-  BasicShape shape;
-  AnimatorModel model;
+  private String tag;
+  private BasicShape shape;
+  private AnimatorModel model;
 
   public CreateCommand(String params, AnimatorModel model) {
     String[] lop = params.split(",");

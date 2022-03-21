@@ -186,8 +186,11 @@ public class AnimatorModelImpl implements AnimatorModel<BasicShape, ShapeState> 
   }
 
   private void isValidTag(String tag) {
-    if (tag.isEmpty() | tag.equals(null)) {
-      throw new IllegalArgumentException("Invalid tag, tag is Null.");
+    if (tag == null) {
+      throw new IllegalArgumentException("Invalid tag, tag is null.");
+    }
+    if (tag == "") {
+      throw new IllegalArgumentException("Invalid tag, tag is empty.");
     }
   }
 }

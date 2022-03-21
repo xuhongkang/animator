@@ -20,9 +20,9 @@ public class AnimatorControllerImpl implements AnimatorController {
 
   /**
    * Constructor for animator controller implementation.
-   * @param input     Represent the input from the user.
-   * @param output     Represent the Appendable to output with.
-   * @param model     Represent the model to call actions on.
+   * @param input     Represents the input received from the user.
+   * @param output     Represents the Appendable to send outputs to.
+   * @param model     REpresents the model to call actions on.
    */
   public AnimatorControllerImpl(Readable input, Appendable output, AnimatorModel model) {
     if (input == null) {
@@ -51,6 +51,7 @@ public class AnimatorControllerImpl implements AnimatorController {
           String commandLine = s.nextLine();
           String commands[] = commandLine.split(" ");
           Motion.MotionBuilder mb = new Motion.MotionBuilder();
+          boolean hasCreate = false;
           for (String command : commands) {
             String[] identifier = command.split("/");
             if (identifier.length != 2) {
@@ -66,25 +67,36 @@ public class AnimatorControllerImpl implements AnimatorController {
                 CreateCommand cmd = new CreateCommand(params, this.model);
                 cmd.build();
                 currentTag = cmd.getTag();
+                hasCreate = true;
                 break;
               case "tag":
-                new TagCommand(params, currentTag, mb);
+                new TagCommand(params, currentTag, mb).build();
                 break;
               case "time":
                 new TimeCommand(params, mb).build();
                 break;
               case "sLoc":
+                new SlocCommand(params, mb).build();
                 break;
               case "eLoc":
+                new ElocCommand(params, mb).build();
                 break;
               case "sDim":
+                new SdimCommand(params, mb).build();
                 break;
               case "eDim":
+                new EdimCommand(params, mb).build();
                 break;
               case "color":
+                new ColorCommand(params, mb).build();
                 break;
             }
           }
+
+          if (commands.length != 1 || !hasCreate) {
+            model.addMotion(mb.build());
+          }
+
         }
       } catch (IllegalArgumentException iae) {
         this.view.viewMessage(iae.getMessage());
