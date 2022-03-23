@@ -11,14 +11,14 @@ import cs3500.animator.model.ShapeState;
  * Basic View Implementation for animator.
  */
 public class AnimatorViewImpl implements AnimatorView {
-  private AnimatorModel<String, ShapeState> model;
+  private AnimatorModel model;
   private Appendable output;
 
   /**
    * Alternative constructor for Animator View Implementation.
    * @param model
    */
-  public AnimatorViewImpl(AnimatorModel<String, ShapeState> model) {
+  public AnimatorViewImpl(AnimatorModel model) {
     this(model, System.out);
   }
 
@@ -27,7 +27,7 @@ public class AnimatorViewImpl implements AnimatorView {
    * @param model
    * @param output
    */
-  public AnimatorViewImpl(AnimatorModel<String, ShapeState> model, Appendable output) {
+  public AnimatorViewImpl(AnimatorModel model, Appendable output) {
     if (model == null) {
       throw new IllegalArgumentException("Invalid Model, Model is Null.");
     }

@@ -1,4 +1,4 @@
-package cs3500.animator.view;
+package cs3500.animator;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,6 +11,8 @@ import cs3500.animator.model.BasicColor;
 import cs3500.animator.model.BasicShape;
 import cs3500.animator.model.Motion;
 import cs3500.animator.model.ShapeState;
+import cs3500.animator.view.AnimatorView;
+import cs3500.animator.view.AnimatorViewImpl;
 
 import static org.junit.Assert.assertEquals;
 
@@ -54,6 +56,52 @@ public class AnimatorViewImplTest {
     ss4 = new ShapeState(6, 440, 70, 120, 60, new BasicColor("Blue"));
     ss5 = new ShapeState(40, 440, 70, 120, 60, new BasicColor("Blue"));
   }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testFailedViewBuiltOne() {
+    AnimatorView failedBCNullModel = new AnimatorViewImpl(null, System.out);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testFailedViewBuiltTwo() {
+    AnimatorView failedBCNullOutput = new AnimatorViewImpl(
+            new AnimatorModelImpl(), null);
+  }
+
+  @Test
+  public void testSuccessfulBuilt() {
+    AnimatorView successfulBuilt = new AnimatorViewImpl(
+            new AnimatorModelImpl(), System.out);
+
+    assertEquals(successfulBuilt.getClass(), AnimatorViewImpl.class);
+  }
+
+
+
+
+  @Test
+  public void testViewMessageFirstPart() throws IOException {
+    // give a bad output,
+    // catch the exception,
+    // check if the exception is caught.
+
+  }
+
+  @Test
+  public void testViewMessageSecondPart() throws IOException {
+
+   // make a new AnimatorViewImpl class, i give it stringbuilder, which is a built in class of java
+
+            // use the viewMesasge method to give a good output
+    // see if the good output is recorded in the stringBuilder;
+
+
+    // give a good output.
+    // see if the good output is received.
+
+    // go into the field 'output' and see if anything is appended?
+  }
+
 
   @Test
   public void testView() throws IOException {

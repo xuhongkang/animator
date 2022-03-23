@@ -1,4 +1,4 @@
-package cs3500.animator.model;
+package cs3500.animator;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,6 +11,13 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.Arrays;
+
+import cs3500.animator.model.AnimatorModel;
+import cs3500.animator.model.AnimatorModelImpl;
+import cs3500.animator.model.BasicColor;
+import cs3500.animator.model.BasicShape;
+import cs3500.animator.model.Motion;
+import cs3500.animator.model.ShapeState;
 
 public class AnimatorModelImplTest {
 
@@ -58,7 +65,41 @@ public class AnimatorModelImplTest {
     HashMap<String, ArrayList<ShapeState>> animations = model.getAnimations();
 
     assertEquals(new ArrayList<ShapeState>(), animations.get("R"));
+  }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void testDeleteShapeEmptyTag() {
+    model.deleteShape("");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testDeleteShapeNullTag() {
+    model.deleteShape(null);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testTagNotFromShapesDS() {
+    model.createShape("R", BasicShape.RECTANGLE);
+    model.deleteShape("C");
+  }
+
+  @Test
+  public void testSuccessfulDeleteShape() {
+    model.createShape("R", BasicShape.RECTANGLE);
+    model.createShape("O", BasicShape.OVAL);
+
+    model.deleteShape("O");
+
+    HashMap<String, BasicShape> shapes = model.getShapes();
+
+    assertEquals(1, shapes.size());
+    assertEquals(BasicShape.RECTANGLE, shapes.get("R"));
+    assertEquals(null, shapes.get("O"));
+
+    HashMap<String, ArrayList<ShapeState>> animations = model.getAnimations();
+
+    assertEquals(1, animations.size());
+    assertEquals(null, animations.get("O"));
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -284,6 +325,30 @@ public class AnimatorModelImplTest {
 
     assertEquals(tags, model.getTags());
     assertEquals(shapeStates, model.getMotions("R"));
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testReverseMotionEmptyTag() {
+    model.removeLastMotion("");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testReverseMotionNullTag() {
+    model.removeLastMotion(null);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testReverseMotionTagNotFromShapes() {
+    model.createShape("R", BasicShape.RECTANGLE);
+    model.removeLastMotion("O");
+  }
+
+  @Test
+  public void testSuccessfulReverseMotion() {
+    model.createShape("R", BasicShape.RECTANGLE);
+    model.removeLastMotion("R");
+
+
   }
 
   @Test

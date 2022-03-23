@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 /**
  * Simple Implementation of the animator model.
  */
-public class AnimatorModelImpl implements AnimatorModel<BasicShape, ShapeState> {
+public class AnimatorModelImpl implements AnimatorModel {
   private HashMap<String, ArrayList<ShapeState>> animations;
   private HashMap<String, BasicShape> shapes;
 
@@ -36,6 +36,16 @@ public class AnimatorModelImpl implements AnimatorModel<BasicShape, ShapeState> 
     }
     this.shapes.put(tag, bShape);
     this.animations.put(tag, new ArrayList<ShapeState>());
+  }
+
+  @Override
+  public void deleteShape(String tag) {
+    this.isValidTag(tag);
+    if (!shapes.containsKey(tag)) {
+      throw new IllegalArgumentException("The targeted shape hasn't been created yet");
+    }
+    this.shapes.remove(tag);
+    this.animations.remove(tag);
   }
 
   @Override
@@ -83,6 +93,27 @@ public class AnimatorModelImpl implements AnimatorModel<BasicShape, ShapeState> 
       } catch (NullPointerException npe) {
         throw new IllegalArgumentException("Insufficient Parameters.");
       }
+    }
+  }
+
+  @Override
+  public void removeLastMotion(String tag) {
+    this.isValidTag(tag);
+    if (!shapes.containsKey(tag)) {
+      throw new IllegalArgumentException("The specific shape isn't created yet.");
+    }
+
+    ArrayList<ShapeState> statesSoFar = this.animations.get(tag);
+
+    if (statesSoFar.size() == 2) {
+      statesSoFar.remove(0);
+      statesSoFar.remove(1);
+    }
+    if (statesSoFar.size() == 0) {
+      statesSoFar = statesSoFar;
+    }
+    else {
+      statesSoFar.remove(statesSoFar.size() - 1);
     }
   }
 

@@ -9,6 +9,8 @@ import cs3500.animator.model.Motion;
 import cs3500.animator.view.AnimatorView;
 import cs3500.animator.view.AnimatorViewImpl;
 
+// don't need to worry about controller for this assignment.
+
 /**
  * Simple Implementation of the Controller for animator.
  */
@@ -16,7 +18,7 @@ public class AnimatorControllerImpl implements AnimatorController {
   private Readable input;
   private Appendable output;
   private AnimatorView view;
-  private AnimatorModel<String, ShapeState> model;
+  private AnimatorModel model;
 
   /**
    * Constructor for animator controller implementation.
@@ -107,4 +109,8 @@ public class AnimatorControllerImpl implements AnimatorController {
       throw new IllegalStateException("IO Error");
     }
   }
+
 }
+
+
+

@@ -19,22 +19,22 @@ public class ShapeState {
    */
   public ShapeState(int time, int ctrX, int ctrY, int dimW, int dimH, BasicColor color) {
     if (time < 0) {
-      throw new IllegalArgumentException("Invalid time, time is negative.");
+      throw new NullPointerException("Invalid time, time is negative.");
     }
     if (ctrX < 0) {
-      throw new IllegalArgumentException("Invalid time, centerX is negative.");
+      throw new NullPointerException("Invalid time, centerX is negative.");
     }
     if (ctrY < 0) {
-      throw new IllegalArgumentException("Invalid time, centerY is negative.");
+      throw new NullPointerException("Invalid time, centerY is negative.");
     }
     if (dimW < 0) {
-      throw new IllegalArgumentException("Invalid time, width is negative.");
+      throw new NullPointerException("Invalid time, width is negative.");
     }
     if (dimH < 0) {
-      throw new IllegalArgumentException("Invalid time, height is negative.");
+      throw new NullPointerException("Invalid time, height is negative.");
     }
     if (color == null) {
-      throw new IllegalArgumentException("Invalid color, color is Null.");
+      throw new NullPointerException("Invalid color, color is Null.");
     }
     this.time = time;
     this.ctrX = ctrX;
