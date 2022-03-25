@@ -1,12 +1,20 @@
-package cs3500.animator.controller;
+package cs3500.animator.controller.commands;
 
 import cs3500.animator.model.Motion;
 
+/**
+ * Command Handler for the time command.
+ */
 public class TimeCommand implements AnimatorCommand {
   private Integer sTime;
   private Integer eTime;
   private Motion.MotionBuilder builder;
 
+  /**
+   * Constructor for time command.
+   * @param params is the string input for parameters
+   * @param mb is the motion builder
+   */
   public TimeCommand(String params, Motion.MotionBuilder mb) {
     String[] lop = params.split(",");
     try {

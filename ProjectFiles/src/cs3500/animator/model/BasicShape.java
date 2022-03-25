@@ -19,6 +19,10 @@ public enum BasicShape {
     }
   }
 
+  /**
+   * Copy method to provide a deep copy (for transmission).
+   * @return a deep copy of the current basic shape
+   */
   public BasicShape copy() {
     if (this.equals(RECTANGLE)) {
       return RECTANGLE;

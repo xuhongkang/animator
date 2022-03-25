@@ -2,12 +2,9 @@ package cs3500.animator.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
-import java.util.stream.Stream;
 
 /**
  * Simple Implementation of the animator model.
@@ -90,7 +87,7 @@ public class AnimatorModelImpl implements AnimatorModel {
         } else {
           motions.add(end);
         }
-      } catch (NullPointerException npe) {
+      } catch (IllegalStateException ise) {
         throw new IllegalArgumentException("Insufficient Parameters.");
       }
     }
@@ -107,10 +104,10 @@ public class AnimatorModelImpl implements AnimatorModel {
 
     if (statesSoFar.size() == 2) {
       statesSoFar.remove(0);
-      statesSoFar.remove(1);
+      statesSoFar.remove(0);
     }
     if (statesSoFar.size() == 0) {
-      statesSoFar = statesSoFar;
+      // Do Nothing
     }
     else {
       statesSoFar.remove(statesSoFar.size() - 1);
@@ -135,8 +132,7 @@ public class AnimatorModelImpl implements AnimatorModel {
   @Override
   public HashMap<String, ArrayList<ShapeState>> getAnimations() {
     HashMap<String, ArrayList<ShapeState>> copy = new HashMap<String, ArrayList<ShapeState>>();
-    for (Map.Entry<String, ArrayList<ShapeState>> entry : this.animations.entrySet())
-    {
+    for (Map.Entry<String, ArrayList<ShapeState>> entry : this.animations.entrySet()) {
       ArrayList<ShapeState> entryValues = new ArrayList<ShapeState>();
       for (ShapeState s : entry.getValue()) {
         entryValues.add(s.copy());
@@ -149,17 +145,14 @@ public class AnimatorModelImpl implements AnimatorModel {
   @Override
   public HashMap<String, BasicShape> getShapes() {
     HashMap<String, BasicShape> copy = new HashMap<String, BasicShape>();
-    for (Map.Entry<String, BasicShape> entry : this.shapes.entrySet())
-    {
+    for (Map.Entry<String, BasicShape> entry : this.shapes.entrySet()) {
       BasicShape basicShape = entry.getValue();
       copy.put(entry.getKey(), basicShape.copy());
     }
     return copy;
   }
 
-  /**
-   * ONLY FOR TESTING PLZ DELETE FOR SUBMISSION
-   */
+  @Override
   public void addState(String tag, ShapeState... states) {
     for (ShapeState state : states) {
       this.animations.get(tag).add(state);
@@ -168,7 +161,7 @@ public class AnimatorModelImpl implements AnimatorModel {
 
   private Motion shortcut(ShapeState prev, Motion m) {
     if (prev == null) {
-      if (m.getStartX() == null | m.getStartY() == null | m.getStartH() == null |
+      if (m.getStartX() == null || m.getStartY() == null || m.getStartH() == null ||
               m.getStartW() == null | m.getStartC() == null) {
         throw new IllegalArgumentException("Cannot skip start params when not Initialized, " +
                 "Please Initialize First");
@@ -220,7 +213,7 @@ public class AnimatorModelImpl implements AnimatorModel {
     if (tag == null) {
       throw new IllegalArgumentException("Invalid tag, tag is null.");
     }
-    if (tag == "") {
+    if (tag.equals("")) {
       throw new IllegalArgumentException("Invalid tag, tag is empty.");
     }
   }

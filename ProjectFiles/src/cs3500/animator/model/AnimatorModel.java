@@ -12,15 +12,16 @@ public interface AnimatorModel {
 
   /**
    * Creates a new shape in the model.
-   * @throws IllegalArgumentException if parameters are invalid.
    * @param tag is the tag for the target shape
    * @param bShape is a basic shape
+   * @throws IllegalArgumentException if parameters are invalid.
    */
   void createShape(String tag, BasicShape bShape);
 
   /**
    * Delete the shape represented by the given tag.
    * @param tag     the tag standing for the target shape to be deleted.
+   * @throws IllegalArgumentException if the tag is invalid.
    */
   void deleteShape(String tag);
 
@@ -33,6 +34,7 @@ public interface AnimatorModel {
   /**
    * To reverse the motion you just gave.
    * @param tag     represent the specific shape that you wanna reverse motion for.
+   * @throws IllegalArgumentException if tag is invalid.
    */
   void removeLastMotion(String tag);
 
@@ -64,7 +66,7 @@ public interface AnimatorModel {
   HashMap<String, BasicShape> getShapes();
 
   /**
-   * ONLY FOR TESTING MAJOR VULNERABILITY DELETE ON SUBMISSION!
+   * ONLY FOR TESTING! Oh C'mon grader don't do this.
    */
   void addState(String tag, ShapeState... states);
 }

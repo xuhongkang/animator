@@ -2,7 +2,6 @@ package cs3500.animator;
 
 import org.junit.Test;
 
-import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import cs3500.animator.controller.AnimatorController;
@@ -10,11 +9,10 @@ import cs3500.animator.controller.AnimatorControllerImpl;
 import cs3500.animator.model.AnimatorModelImpl;
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Test for the animator controller.
+ */
 public class AnimatorControllerImplTest {
-
-
-
-
   @Test(expected = IllegalArgumentException.class)
   public void testInvalidBuiltControllerOne() {
     AnimatorController failedBCNullInput = new AnimatorControllerImpl(null, System.out,

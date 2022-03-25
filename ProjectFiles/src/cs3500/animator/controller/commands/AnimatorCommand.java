@@ -1,4 +1,4 @@
-package cs3500.animator.controller;
+package cs3500.animator.controller.commands;
 
 /**
  * For representing the kinds of commands the controller will receive.

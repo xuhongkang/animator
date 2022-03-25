@@ -1,13 +1,20 @@
-package cs3500.animator.controller;
+package cs3500.animator.controller.commands;
 
 import cs3500.animator.model.Motion;
 
+/**
+ * Command Handler for sdim command.
+ */
 public class SdimCommand implements AnimatorCommand {
-
   private Integer startW;
   private Integer startH;
   private Motion.MotionBuilder builder;
 
+  /**
+   * Constructor for sdim command.
+   * @param params is the string input for parameters
+   * @param mb is the motion builder
+   */
   public SdimCommand(String params, Motion.MotionBuilder mb) {
     String[] swANDsh = params.split(",");
 

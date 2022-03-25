@@ -1,13 +1,22 @@
-package cs3500.animator.controller;
+package cs3500.animator.controller.commands;
 
 import cs3500.animator.model.BasicShape;
 import cs3500.animator.model.Motion;
 
+/**
+ * Command Handler for the tag command.
+ */
 public class TagCommand {
   String tag;
   BasicShape shape;
   Motion.MotionBuilder builder;
 
+  /**
+   * Constructor for tag command.
+   * @param params is the string input for parameters
+   * @param defaultTag is the default string tag
+   * @param builder is the motion builder
+   */
   public TagCommand(String params, String defaultTag, Motion.MotionBuilder builder) {
     String[] lop = params.split(",");
     if (lop.length == 1) {
@@ -37,6 +46,10 @@ public class TagCommand {
       }
     }
     this.builder = builder;
+  }
+
+  public String getTag() {
+    return this.tag;
   }
 
   public void build() {

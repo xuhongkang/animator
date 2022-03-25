@@ -3,20 +3,28 @@ package cs3500.animator.controller;
 import java.io.IOException;
 import java.util.Scanner;
 
+import cs3500.animator.controller.commands.ColorCommand;
+import cs3500.animator.controller.commands.CreateCommand;
+import cs3500.animator.controller.commands.DeleteCommand;
+import cs3500.animator.controller.commands.EdimCommand;
+import cs3500.animator.controller.commands.ElocCommand;
+import cs3500.animator.controller.commands.RemoveCommand;
+import cs3500.animator.controller.commands.SdimCommand;
+import cs3500.animator.controller.commands.SlocCommand;
+import cs3500.animator.controller.commands.TagCommand;
+import cs3500.animator.controller.commands.TimeCommand;
 import cs3500.animator.model.AnimatorModel;
-import cs3500.animator.model.ShapeState;
 import cs3500.animator.model.Motion;
 import cs3500.animator.view.AnimatorView;
 import cs3500.animator.view.AnimatorViewImpl;
 
-// don't need to worry about controller for this assignment.
+// Don't need to worry about controller for this assignment.
 
 /**
  * Simple Implementation of the Controller for animator.
  */
 public class AnimatorControllerImpl implements AnimatorController {
   private Readable input;
-  private Appendable output;
   private AnimatorView view;
   private AnimatorModel model;
 
@@ -37,10 +45,9 @@ public class AnimatorControllerImpl implements AnimatorController {
       throw new IllegalArgumentException("Invalid Model, Model is null");
     }
     this.input = input;
-    this.output = output;
     this.model = model;
 
-    this.view = new AnimatorViewImpl(this.model, this.output);
+    this.view = new AnimatorViewImpl(this.model, output);
   }
 
   @Override
@@ -51,13 +58,15 @@ public class AnimatorControllerImpl implements AnimatorController {
       try {
         while (s.hasNext()) {
           String commandLine = s.nextLine();
-          String commands[] = commandLine.split(" ");
+          String[] commands = commandLine.split(" ");
           Motion.MotionBuilder mb = new Motion.MotionBuilder();
           boolean hasCreate = false;
+          boolean hasDelete = false;
           for (String command : commands) {
             String[] identifier = command.split("/");
             if (identifier.length != 2) {
-              throw new IllegalArgumentException("Multiple or No Slashes Grouped up, Can only be one.");
+              throw new IllegalArgumentException("Multiple or No Slashes Grouped up, Can only be " +
+                      "one.");
             }
             String prefix = identifier[0];
             String params = identifier[1];
@@ -71,32 +80,47 @@ public class AnimatorControllerImpl implements AnimatorController {
                 currentTag = cmd.getTag();
                 hasCreate = true;
                 break;
+              case "del":
+                new DeleteCommand(params, this.model).build();
+                hasDelete = true;
+                break;
+              case "rmv":
+                new RemoveCommand(params, this.model).build();
+                hasDelete = true;
+                break;
               case "tag":
-                new TagCommand(params, currentTag, mb).build();
+                TagCommand tmd = new TagCommand(params, currentTag, mb);
+                tmd.build();
+                currentTag = tmd.getTag();
                 break;
               case "time":
                 new TimeCommand(params, mb).build();
                 break;
-              case "sLoc":
+              case "sloc":
                 new SlocCommand(params, mb).build();
                 break;
-              case "eLoc":
+              case "eloc":
                 new ElocCommand(params, mb).build();
                 break;
-              case "sDim":
+              case "sdim":
                 new SdimCommand(params, mb).build();
                 break;
-              case "eDim":
+              case "edim":
                 new EdimCommand(params, mb).build();
                 break;
               case "color":
                 new ColorCommand(params, mb).build();
                 break;
+              default:
+                throw new IllegalArgumentException("Commands Cannot Be Recognized.");
             }
           }
-
-          if (commands.length != 1 || !hasCreate) {
-            model.addMotion(mb.build());
+          if (!hasCreate && !hasDelete) {
+            Motion m = mb.build();
+            if (m.getTag() == null) {
+              m.setTag(currentTag);
+            }
+            this.model.addMotion(m);
           }
 
         }

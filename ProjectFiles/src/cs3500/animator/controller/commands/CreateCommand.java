@@ -1,14 +1,21 @@
-package cs3500.animator.controller;
+package cs3500.animator.controller.commands;
 
 import cs3500.animator.model.AnimatorModel;
 import cs3500.animator.model.BasicShape;
-import cs3500.animator.model.Motion;
 
+/**
+ * Command Handler for Create Command.
+ */
 public class CreateCommand implements AnimatorCommand {
   private String tag;
   private BasicShape shape;
   private AnimatorModel model;
 
+  /**
+   * Constructor for Create Command.
+   * @param params is the string input for parameters
+   * @param model is the model
+   */
   public CreateCommand(String params, AnimatorModel model) {
     String[] lop = params.split(",");
     if (lop.length == 1) {

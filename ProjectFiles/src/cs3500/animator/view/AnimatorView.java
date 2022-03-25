@@ -9,11 +9,13 @@ public interface AnimatorView {
 
   /**
    * Renders an error message.
+   * @throws IOException if there's a problem with handling inputs and outputs.
    */
   void viewMessage(String message) throws IOException;
 
   /**
    * Renders the state of the animator model.
+   * @throws IOException if there's a problem with handling inputs and outputs.
    */
   void viewState() throws IOException;
 }

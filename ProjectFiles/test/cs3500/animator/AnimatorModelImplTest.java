@@ -19,6 +19,9 @@ import cs3500.animator.model.BasicShape;
 import cs3500.animator.model.Motion;
 import cs3500.animator.model.ShapeState;
 
+/**
+ * This is the test for the model.
+ */
 public class AnimatorModelImplTest {
 
   private AnimatorModel model;
@@ -344,11 +347,67 @@ public class AnimatorModelImplTest {
   }
 
   @Test
-  public void testSuccessfulReverseMotion() {
+  public void testSuccessfulReverseMotionMt() {
     model.createShape("R", BasicShape.RECTANGLE);
+
     model.removeLastMotion("R");
 
+    assertEquals(new ArrayList<ShapeState>(), model.getMotions("R"));
+  }
 
+  @Test
+  public void testSuccessfulReverseMotionOne() {
+    model.createShape("R", BasicShape.RECTANGLE);
+
+    motionBuilder.setTag("R", BasicShape.RECTANGLE);
+    motionBuilder.setTime(0, 1);
+    motionBuilder.setStartWH(3, 3);
+    motionBuilder.setStartXY(3, 3);
+    motionBuilder.setStartColor(new BasicColor("Red"));
+    motionBuilder.setEndWH(4, 4);
+    motionBuilder.setEndXY(5, 5);
+    motionBuilder.setEndColor(new BasicColor("Red"));
+
+    model.addMotion(motionBuilder.build());
+
+    model.removeLastMotion("R");
+
+    assertEquals(new ArrayList<ShapeState>(), model.getMotions("R"));
+  }
+
+  @Test
+  public void testSuccessfulReverseMotionMoreThanOne() {
+    model.createShape("R", BasicShape.RECTANGLE);
+
+    motionBuilder.setTag("R", BasicShape.RECTANGLE);
+    motionBuilder.setTime(0, 1);
+    motionBuilder.setStartWH(3, 3);
+    motionBuilder.setStartXY(3, 3);
+    motionBuilder.setStartColor(new BasicColor("Red"));
+    motionBuilder.setEndWH(4, 4);
+    motionBuilder.setEndXY(5, 5);
+    motionBuilder.setEndColor(new BasicColor("Red"));
+
+    model.addMotion(motionBuilder.build());
+
+    secondMotionBuilder.setTag("R", BasicShape.RECTANGLE);
+    secondMotionBuilder.setTime(1, 2);
+    secondMotionBuilder.setStartWH(4, 4);
+    secondMotionBuilder.setStartXY(5, 5);
+    secondMotionBuilder.setStartColor(new BasicColor("Red"));
+    secondMotionBuilder.setEndWH(7, 7);
+    secondMotionBuilder.setEndXY(7, 7);
+    secondMotionBuilder.setEndColor(new BasicColor("Red"));
+
+    model.addMotion(secondMotionBuilder.build());
+
+    model.removeLastMotion("R");
+
+    ArrayList<ShapeState> currentMotions = new ArrayList<ShapeState>();
+    currentMotions.add(new ShapeState(0, 3, 3, 3, 3, new BasicColor("Red")));
+    currentMotions.add(new ShapeState(1, 5, 5, 4, 4, new BasicColor("Red")));
+
+    assertEquals(currentMotions, model.getMotions("R"));
   }
 
   @Test

@@ -1,14 +1,21 @@
-package cs3500.animator.controller;
+package cs3500.animator.controller.commands;
 
 import cs3500.animator.model.Motion;
 
+/**
+ * Command Handler for Eloc Command.
+ */
 public class ElocCommand implements AnimatorCommand {
-
   private Integer endX;
   private Integer endY;
   private Motion.MotionBuilder builder;
 
-  public ElocCommand(String params, Motion.MotionBuilder mb) {
+  /**
+   * Constructor for delete command.
+   * @param params is the string input for parameters
+   * @param builder is the motion builder
+   */
+  public ElocCommand(String params, Motion.MotionBuilder builder) {
     String[] exANDey = params.split(",");
 
     try {
@@ -29,12 +36,12 @@ public class ElocCommand implements AnimatorCommand {
               "into int.");
     }
 
-    this.builder = mb;
+    this.builder = builder;
   }
 
   @Override
   public void build() {
-    this.builder.setEndWH(endX, endY);
+    this.builder.setEndXY(endX, endY);
   }
 }
 

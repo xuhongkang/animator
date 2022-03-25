@@ -16,7 +16,7 @@ public class AnimatorViewImpl implements AnimatorView {
 
   /**
    * Alternative constructor for Animator View Implementation.
-   * @param model
+   * @param model is the animator model
    */
   public AnimatorViewImpl(AnimatorModel model) {
     this(model, System.out);
@@ -24,8 +24,8 @@ public class AnimatorViewImpl implements AnimatorView {
 
   /**
    * Constructor for Animator View Implementation.
-   * @param model
-   * @param output
+   * @param model is the animator model
+   * @param output is the appendable output
    */
   public AnimatorViewImpl(AnimatorModel model, Appendable output) {
     if (model == null) {
@@ -60,14 +60,17 @@ public class AnimatorViewImpl implements AnimatorView {
         String motionMessage = String.format("motion %s   ", t);
         String motionMessageIndent = " ".repeat(motionMessage.length());
         List<ShapeState> motions = this.model.getMotions(t);
-        if (motions.isEmpty()){
+        if (motions.isEmpty()) {
           // Skip a line
-          this.viewMessage("");
+          this.viewMessage("No Animations");
         } else {
           // Print Table
-          String table = motionMessageIndent + "            start                               end\n" +
-                         motionMessageIndent + "-----------------------------     -----------------------------\n" +
-                         motionMessageIndent + "t   x   y   w   h   r   g   b     t   x   y   w   h   r   g   b";
+          String table = motionMessageIndent + "            start"
+              + "                               end\n"
+              + motionMessageIndent + "-----------------------------"
+              + "     -----------------------------\n"
+              + motionMessageIndent + "t   x   y   w   h   r   g   b"
+              + "     t   x   y   w   h   r   g   b";
           this.viewMessage(table);
 
           // Print First

@@ -17,11 +17,11 @@ public class BasicColor {
    * @param b is the blue value
    */
   public BasicColor(int r, int g, int b) {
-    this.setValue(r, g, b);
+    this.setRGBValue(r, g, b);
   }
 
   public BasicColor(String s) {
-    this.setValue(s);
+    this.setRGBValue(s);
   }
 
   public BasicColor copy() {
@@ -40,22 +40,26 @@ public class BasicColor {
     return this.bValue;
   }
 
-  public void setValue(String s) {
-    switch(s) {
+  /**
+   * Sets the RGB value when given string representation of a specific color.
+   * @param s is a string representation of a documented color
+   */
+  public void setRGBValue(String s) {
+    switch (s) {
       case "Red":
-        this.setValue(255, 0, 0);
+        this.setRGBValue(255, 0, 0);
         break;
       case "Green":
-        this.setValue(0, 255, 0);
+        this.setRGBValue(0, 255, 0);
         break;
       case "Blue":
-        this.setValue(0, 0, 255);
+        this.setRGBValue(0, 0, 255);
         break;
       case "Yellow":
-        this.setValue(255, 255, 0);
+        this.setRGBValue(255, 255, 0);
         break;
       case "Purple":
-        this.setValue(255, 0, 255);
+        this.setRGBValue(255, 0, 255);
         break;
       default:
         throw new IllegalArgumentException("Invalid Color, unable to Identify.");
@@ -68,7 +72,7 @@ public class BasicColor {
    * @param g is the green value
    * @param b is the blue value
    */
-  public void setValue(int r, int g, int b) {
+  public void setRGBValue(int r, int g, int b) {
     if (r < 0 | r > 255) {
       throw new IllegalArgumentException("Invalid r, Value Out of Bounds.");
     }

@@ -1,14 +1,22 @@
-package cs3500.animator.controller;
+package cs3500.animator.controller.commands;
 
 import cs3500.animator.model.Motion;
 
+/**
+ * Command Handler for sloc command.
+ */
 public class SlocCommand implements AnimatorCommand {
 
   private Integer startX;
   private Integer startY;
   private Motion.MotionBuilder builder;
 
-  public SlocCommand(String params, Motion.MotionBuilder mb) {
+  /**
+   * Constructor for sloc command.
+   * @param params is the string input for parameters
+   * @param builder is the motion builder
+   */
+  public SlocCommand(String params, Motion.MotionBuilder builder) {
     String[] sxANDsy = params.split(",");
 
     try {
@@ -28,12 +36,11 @@ public class SlocCommand implements AnimatorCommand {
       throw new IllegalArgumentException("Invalid starting location parameters, can't parse" +
               "into int.");
     }
-
-    this.builder = mb;
+    this.builder = builder;
   }
 
   @Override
   public void build() {
-    this.builder.setStartWH(startX, startY);
+    this.builder.setStartXY(startX, startY);
   }
 }
