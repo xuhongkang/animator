@@ -1,0 +1,195 @@
+canvas 800 800
+rectangle name background min-x 0 min-y 0 width 800 height 800 color 0.1333 0.37 0.976 from 1 to 200
+rectangle name B0 min-x 80 min-y 424 width 100 height 326 color 0 0 0 from 1 to 200
+rectangle name B1 min-x 260 min-y 365 width 100 height 385 color 0 0 0 from 1 to 200
+rectangle name B2 min-x 440 min-y 375 width 100 height 375 color 0 0 0 from 1 to 200
+rectangle name B3 min-x 620 min-y 445 width 100 height 305 color 0 0 0 from 1 to 200
+rectangle name window000 min-x 100.0 min-y 850.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window001 min-x 140.0 min-y 850.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window010 min-x 100.0 min-y 890.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window011 min-x 140.0 min-y 890.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window020 min-x 100.0 min-y 930.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window021 min-x 140.0 min-y 930.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window030 min-x 100.0 min-y 970.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window031 min-x 140.0 min-y 970.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window040 min-x 100.0 min-y 1010.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window041 min-x 140.0 min-y 1010.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window050 min-x 100.0 min-y 1050.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window051 min-x 140.0 min-y 1050.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window060 min-x 100.0 min-y 1090.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window061 min-x 140.0 min-y 1090.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window100 min-x 280.0 min-y -750.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window101 min-x 320.0 min-y -750.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window110 min-x 280.0 min-y -710.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window111 min-x 320.0 min-y -710.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window120 min-x 280.0 min-y -670.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window121 min-x 320.0 min-y -670.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window130 min-x 280.0 min-y -630.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window131 min-x 320.0 min-y -630.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window140 min-x 280.0 min-y -590.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window141 min-x 320.0 min-y -590.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window150 min-x 280.0 min-y -550.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window151 min-x 320.0 min-y -550.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window160 min-x 280.0 min-y -510.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window161 min-x 320.0 min-y -510.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window170 min-x 280.0 min-y -470.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window171 min-x 320.0 min-y -470.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window180 min-x 280.0 min-y -430.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window181 min-x 320.0 min-y -430.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window200 min-x 460.0 min-y 850.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window201 min-x 500.0 min-y 850.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window210 min-x 460.0 min-y 890.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window211 min-x 500.0 min-y 890.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window220 min-x 460.0 min-y 930.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window221 min-x 500.0 min-y 930.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window230 min-x 460.0 min-y 970.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window231 min-x 500.0 min-y 970.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window240 min-x 460.0 min-y 1010.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window241 min-x 500.0 min-y 1010.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window250 min-x 460.0 min-y 1050.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window251 min-x 500.0 min-y 1050.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window260 min-x 460.0 min-y 1090.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window261 min-x 500.0 min-y 1090.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window270 min-x 460.0 min-y 1130.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window271 min-x 500.0 min-y 1130.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window300 min-x 640.0 min-y -750.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window301 min-x 680.0 min-y -750.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window310 min-x 640.0 min-y -710.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window311 min-x 680.0 min-y -710.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window320 min-x 640.0 min-y -670.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window321 min-x 680.0 min-y -670.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window330 min-x 640.0 min-y -630.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window331 min-x 680.0 min-y -630.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window340 min-x 640.0 min-y -590.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window341 min-x 680.0 min-y -590.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window350 min-x 640.0 min-y -550.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window351 min-x 680.0 min-y -550.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window360 min-x 640.0 min-y -510.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+rectangle name window361 min-x 680.0 min-y -510.0 width 20.0 height 20.0 color 1 1 1 from 1 to 200
+move name window000 moveto 100.0 850.0 100.0 710.0 from 20 to 60
+move name window001 moveto 140.0 850.0 140.0 710.0 from 20 to 60
+move name window010 moveto 100.0 890.0 100.0 670.0 from 20 to 60
+move name window011 moveto 140.0 890.0 140.0 670.0 from 20 to 60
+move name window020 moveto 100.0 930.0 100.0 630.0 from 20 to 60
+move name window021 moveto 140.0 930.0 140.0 630.0 from 20 to 60
+move name window030 moveto 100.0 970.0 100.0 590.0 from 20 to 60
+move name window031 moveto 140.0 970.0 140.0 590.0 from 20 to 60
+move name window040 moveto 100.0 1010.0 100.0 550.0 from 20 to 60
+move name window041 moveto 140.0 1010.0 140.0 550.0 from 20 to 60
+move name window050 moveto 100.0 1050.0 100.0 510.0 from 20 to 60
+move name window051 moveto 140.0 1050.0 140.0 510.0 from 20 to 60
+move name window060 moveto 100.0 1090.0 100.0 470.0 from 20 to 60
+move name window061 moveto 140.0 1090.0 140.0 470.0 from 20 to 60
+move name window100 moveto 280.0 -750.0 280.0 710.0 from 20 to 60
+move name window101 moveto 320.0 -750.0 320.0 710.0 from 20 to 60
+move name window110 moveto 280.0 -710.0 280.0 670.0 from 20 to 60
+move name window111 moveto 320.0 -710.0 320.0 670.0 from 20 to 60
+move name window120 moveto 280.0 -670.0 280.0 630.0 from 20 to 60
+move name window121 moveto 320.0 -670.0 320.0 630.0 from 20 to 60
+move name window130 moveto 280.0 -630.0 280.0 590.0 from 20 to 60
+move name window131 moveto 320.0 -630.0 320.0 590.0 from 20 to 60
+move name window140 moveto 280.0 -590.0 280.0 550.0 from 20 to 60
+move name window141 moveto 320.0 -590.0 320.0 550.0 from 20 to 60
+move name window150 moveto 280.0 -550.0 280.0 510.0 from 20 to 60
+move name window151 moveto 320.0 -550.0 320.0 510.0 from 20 to 60
+move name window160 moveto 280.0 -510.0 280.0 470.0 from 20 to 60
+move name window161 moveto 320.0 -510.0 320.0 470.0 from 20 to 60
+move name window170 moveto 280.0 -470.0 280.0 430.0 from 20 to 60
+move name window171 moveto 320.0 -470.0 320.0 430.0 from 20 to 60
+move name window180 moveto 280.0 -430.0 280.0 390.0 from 20 to 60
+move name window181 moveto 320.0 -430.0 320.0 390.0 from 20 to 60
+move name window200 moveto 460.0 850.0 460.0 710.0 from 20 to 60
+move name window201 moveto 500.0 850.0 500.0 710.0 from 20 to 60
+move name window210 moveto 460.0 890.0 460.0 670.0 from 20 to 60
+move name window211 moveto 500.0 890.0 500.0 670.0 from 20 to 60
+move name window220 moveto 460.0 930.0 460.0 630.0 from 20 to 60
+move name window221 moveto 500.0 930.0 500.0 630.0 from 20 to 60
+move name window230 moveto 460.0 970.0 460.0 590.0 from 20 to 60
+move name window231 moveto 500.0 970.0 500.0 590.0 from 20 to 60
+move name window240 moveto 460.0 1010.0 460.0 550.0 from 20 to 60
+move name window241 moveto 500.0 1010.0 500.0 550.0 from 20 to 60
+move name window250 moveto 460.0 1050.0 460.0 510.0 from 20 to 60
+move name window251 moveto 500.0 1050.0 500.0 510.0 from 20 to 60
+move name window260 moveto 460.0 1090.0 460.0 470.0 from 20 to 60
+move name window261 moveto 500.0 1090.0 500.0 470.0 from 20 to 60
+move name window270 moveto 460.0 1130.0 460.0 430.0 from 20 to 60
+move name window271 moveto 500.0 1130.0 500.0 430.0 from 20 to 60
+move name window300 moveto 640.0 -750.0 640.0 710.0 from 20 to 60
+move name window301 moveto 680.0 -750.0 680.0 710.0 from 20 to 60
+move name window310 moveto 640.0 -710.0 640.0 670.0 from 20 to 60
+move name window311 moveto 680.0 -710.0 680.0 670.0 from 20 to 60
+move name window320 moveto 640.0 -670.0 640.0 630.0 from 20 to 60
+move name window321 moveto 680.0 -670.0 680.0 630.0 from 20 to 60
+move name window330 moveto 640.0 -630.0 640.0 590.0 from 20 to 60
+move name window331 moveto 680.0 -630.0 680.0 590.0 from 20 to 60
+move name window340 moveto 640.0 -590.0 640.0 550.0 from 20 to 60
+move name window341 moveto 680.0 -590.0 680.0 550.0 from 20 to 60
+move name window350 moveto 640.0 -550.0 640.0 510.0 from 20 to 60
+move name window351 moveto 680.0 -550.0 680.0 510.0 from 20 to 60
+move name window360 moveto 640.0 -510.0 640.0 470.0 from 20 to 60
+move name window361 moveto 680.0 -510.0 680.0 470.0 from 20 to 60
+oval name moon center-x 250 center-y 250 x-radius 50 y-radius 50 color 0.9 0.9 1 from 1 to 200
+oval name eclipse center-x 450 center-y 50 x-radius 50 y-radius 50 color 0.1333 0.37 0.976 from 1 to 200
+move name eclipse moveto 450 50 280 230 from 50 to 90
+change-color name background colorto 0.1333 0.37 0.976 0.063 0.18 0.976 from 50 to 90
+change-color name eclipse colorto 0.1333 0.37 0.976 0.063 0.18 0.976 from 50 to 90
+oval name star0 center-x 226  center-y 69 x-radius 3 y-radius 3 color 1 1 1 from 108 to 200
+oval name star1 center-x 588  center-y 214 x-radius 3 y-radius 3 color 1 1 1 from 120 to 200
+oval name star2 center-x 492  center-y 80 x-radius 3 y-radius 3 color 1 1 1 from 110 to 200
+oval name star3 center-x 377  center-y 289 x-radius 3 y-radius 3 color 1 1 1 from 93 to 200
+oval name star4 center-x 711  center-y 284 x-radius 3 y-radius 3 color 1 1 1 from 83 to 200
+oval name star5 center-x 511  center-y 263 x-radius 3 y-radius 3 color 1 1 1 from 97 to 200
+oval name star6 center-x 532  center-y 73 x-radius 3 y-radius 3 color 1 1 1 from 92 to 200
+oval name star7 center-x 335  center-y 68 x-radius 3 y-radius 3 color 1 1 1 from 117 to 200
+oval name star8 center-x 314  center-y 150 x-radius 3 y-radius 3 color 1 1 1 from 86 to 200
+oval name star9 center-x 173  center-y 284 x-radius 3 y-radius 3 color 1 1 1 from 88 to 200
+oval name star10 center-x 722  center-y 105 x-radius 3 y-radius 3 color 1 1 1 from 90 to 200
+oval name star11 center-x 527  center-y 267 x-radius 3 y-radius 3 color 1 1 1 from 129 to 200
+oval name star12 center-x 771  center-y 197 x-radius 3 y-radius 3 color 1 1 1 from 86 to 200
+oval name star13 center-x 769  center-y 182 x-radius 3 y-radius 3 color 1 1 1 from 113 to 200
+oval name star14 center-x 513  center-y 81 x-radius 3 y-radius 3 color 1 1 1 from 98 to 200
+oval name star15 center-x 624  center-y 152 x-radius 3 y-radius 3 color 1 1 1 from 114 to 200
+oval name star16 center-x 494  center-y 255 x-radius 3 y-radius 3 color 1 1 1 from 106 to 200
+oval name star17 center-x 408  center-y 66 x-radius 3 y-radius 3 color 1 1 1 from 89 to 200
+oval name star18 center-x 553  center-y 270 x-radius 3 y-radius 3 color 1 1 1 from 113 to 200
+oval name star19 center-x 111  center-y 200 x-radius 3 y-radius 3 color 1 1 1 from 94 to 200
+oval name star20 center-x 740  center-y 81 x-radius 3 y-radius 3 color 1 1 1 from 103 to 200
+oval name star21 center-x 798  center-y 140 x-radius 3 y-radius 3 color 1 1 1 from 126 to 200
+oval name star22 center-x 187  center-y 128 x-radius 3 y-radius 3 color 1 1 1 from 89 to 200
+oval name star23 center-x 137  center-y 233 x-radius 3 y-radius 3 color 1 1 1 from 96 to 200
+oval name star24 center-x 247  center-y 156 x-radius 3 y-radius 3 color 1 1 1 from 120 to 200
+oval name star25 center-x 262  center-y 122 x-radius 3 y-radius 3 color 1 1 1 from 112 to 200
+oval name star26 center-x 325  center-y 272 x-radius 3 y-radius 3 color 1 1 1 from 106 to 200
+oval name star27 center-x 415  center-y 185 x-radius 3 y-radius 3 color 1 1 1 from 117 to 200
+oval name star28 center-x 677  center-y 140 x-radius 3 y-radius 3 color 1 1 1 from 119 to 200
+oval name star29 center-x 49  center-y 249 x-radius 3 y-radius 3 color 1 1 1 from 96 to 200
+oval name star30 center-x 391  center-y 318 x-radius 3 y-radius 3 color 1 1 1 from 123 to 200
+oval name star31 center-x 188  center-y 239 x-radius 3 y-radius 3 color 1 1 1 from 121 to 200
+oval name star32 center-x 553  center-y 235 x-radius 3 y-radius 3 color 1 1 1 from 109 to 200
+oval name star33 center-x 659  center-y 104 x-radius 3 y-radius 3 color 1 1 1 from 94 to 200
+oval name star34 center-x 286  center-y 114 x-radius 3 y-radius 3 color 1 1 1 from 84 to 200
+oval name star35 center-x 652  center-y 329 x-radius 3 y-radius 3 color 1 1 1 from 92 to 200
+oval name star36 center-x 694  center-y 270 x-radius 3 y-radius 3 color 1 1 1 from 115 to 200
+oval name star37 center-x 116  center-y 279 x-radius 3 y-radius 3 color 1 1 1 from 99 to 200
+oval name star38 center-x 607  center-y 305 x-radius 3 y-radius 3 color 1 1 1 from 99 to 200
+oval name star39 center-x 465  center-y 165 x-radius 3 y-radius 3 color 1 1 1 from 127 to 200
+change-color name window021 colorto 1 1 1 1 1 0 from 82 to 87
+change-color name window041 colorto 1 1 1 1 1 0 from 147 to 152
+change-color name window060 colorto 1 1 1 1 1 0 from 147 to 152
+change-color name window061 colorto 1 1 1 1 1 0 from 93 to 98
+change-color name window101 colorto 1 1 1 1 1 0 from 108 to 113
+change-color name window110 colorto 1 1 1 1 1 0 from 95 to 100
+change-color name window131 colorto 1 1 1 1 1 0 from 148 to 153
+change-color name window151 colorto 1 1 1 1 1 0 from 99 to 104
+change-color name window200 colorto 1 1 1 1 1 0 from 127 to 132
+change-color name window210 colorto 1 1 1 1 1 0 from 83 to 88
+change-color name window241 colorto 1 1 1 1 1 0 from 112 to 117
+change-color name window250 colorto 1 1 1 1 1 0 from 128 to 133
+change-color name window261 colorto 1 1 1 1 1 0 from 96 to 101
+change-color name window301 colorto 1 1 1 1 1 0 from 135 to 140
+change-color name window310 colorto 1 1 1 1 1 0 from 103 to 108
+change-color name window330 colorto 1 1 1 1 1 0 from 81 to 86
+change-color name window331 colorto 1 1 1 1 1 0 from 119 to 124
+change-color name window351 colorto 1 1 1 1 1 0 from 100 to 105
+change-color name window360 colorto 1 1 1 1 1 0 from 99 to 104
+change-color name window361 colorto 1 1 1 1 1 0 from 99 to 104
