@@ -1,17 +1,19 @@
 package cs3500.animator.model;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class AnimatorModelImpl implements AnimatorModel {
-  // Invariant: If key is present in properties (at some instance), it is definitely in animations.
   HashMap<String, ShapeProperty> properties;
-  HashMap<String, List<ShapeState>> animations;
 
   public AnimatorModelImpl() {
     this.properties = new HashMap<String, ShapeProperty>();
-    this.animations = new HashMap<String, List<ShapeState>>();
+  }
+
+  @Override
+  public void build() {
+    for (ShapeProperty s : this.properties.values()) {
+      s.build();
+    }
   }
 
   @Override
@@ -23,11 +25,9 @@ public class AnimatorModelImpl implements AnimatorModel {
     if (this.properties.containsKey(name)) {
       throw new IllegalArgumentException("Oval Already Present");
     }
-    ShapeProperty nShapeProperty = new ShapeProperty(startOfLife, endOfLife, BasicShape.OVAL);
+    ShapeProperty nShapeProperty = new ShapeProperty(BasicShape.OVAL, cx, cy, xRadius, yRadius, red,
+    green, blue, startOfLife, endOfLife);
     this.properties.put(name, nShapeProperty);
-    ShapeState nShapeState = new ShapeState(startOfLife, cx, cy, xRadius, yRadius, red, green, blue);
-    this.animations.put(name, new ArrayList<ShapeState>());
-    this.animations.get(name).add(nShapeState);
   }
 
   @Override
@@ -37,13 +37,11 @@ public class AnimatorModelImpl implements AnimatorModel {
                            float red, float green, float blue,
                            int startOfLife, int endOfLife) {
     if (this.properties.containsKey(name)) {
-      throw new IllegalArgumentException("Rectangle Already Present");
+      throw new IllegalArgumentException("Oval Already Present");
     }
-    ShapeProperty nShapeProperty = new ShapeProperty(startOfLife, endOfLife, BasicShape.RECTANGLE);
+    ShapeProperty nShapeProperty = new ShapeProperty(BasicShape.RECTANGLE, lx, ly, width, height, red,
+            green, blue, startOfLife, endOfLife);
     this.properties.put(name, nShapeProperty);
-    ShapeState nShapeState = new ShapeState(startOfLife, lx, ly, width, height, red, green, blue);
-    this.animations.put(name, new ArrayList<ShapeState>());
-    this.animations.get(name).add(nShapeState);
   }
 
   @Override
@@ -54,16 +52,7 @@ public class AnimatorModelImpl implements AnimatorModel {
     if (!this.properties.containsKey(name)) {
       throw new IllegalArgumentException("Target Shape Not Present.");
     }
-    List<ShapeState> pStates = this.animations.get(name);
-    ShapeState lState = pStates.get(pStates.size() - 1);
-    if (lState.getTimeTick() != startTime ||
-            lState.getCx() != moveFromX ||
-            lState.getCy() != moveFromY) {
-      throw new IllegalArgumentException("Does Not Match last Available State");
-    }
-    ShapeState nState = new ShapeState(endTime, moveToX, moveToY, lState.getSw(), lState.getSh(),
-            lState.getRed(), lState.getGreen(), lState.getBlue());
-    pStates.add(nState);
+    this.properties.get(name).addMove(moveFromX, moveFromY, moveToX, moveToY, startTime, endTime);
   }
 
   @Override
@@ -74,17 +63,7 @@ public class AnimatorModelImpl implements AnimatorModel {
     if (!this.properties.containsKey(name)) {
       throw new IllegalArgumentException("Target Shape Not Present.");
     }
-    List<ShapeState> pStates = this.animations.get(name);
-    ShapeState lState = pStates.get(pStates.size() - 1);
-    if (lState.getTimeTick() != startTime ||
-            lState.getRed() != oldR ||
-            lState.getGreen() != oldG ||
-            lState.getBlue() != oldB) {
-      throw new IllegalArgumentException("Does Not Match last Available State");
-    }
-    ShapeState nState = new ShapeState(endTime, lState.getCx(), lState.getCy(), lState.getSw(),
-            lState.getSh(), newR, newG, newB);
-    pStates.add(nState);
+    this.properties.get(name).addColorChange(oldR, oldG, oldB, newR, newG, newB, startTime, endTime);
   }
 
   @Override
@@ -95,15 +74,6 @@ public class AnimatorModelImpl implements AnimatorModel {
     if (!this.properties.containsKey(name)) {
       throw new IllegalArgumentException("Target Shape Not Present.");
     }
-    List<ShapeState> pStates = this.animations.get(name);
-    ShapeState lState = pStates.get(pStates.size() - 1);
-    if (lState.getTimeTick() != startTime ||
-            lState.getSw() != fromSx ||
-            lState.getSh() != fromSy) {
-      throw new IllegalArgumentException("Does Not Match last Available State");
-    }
-    ShapeState nState = new ShapeState(endTime, lState.getCx(), lState.getCy(), toSx, toSy,
-            lState.getRed(), lState.getGreen(), lState.getBlue());
-    pStates.add(nState);
+    this.properties.get(name).addScaleToChange(fromSx, fromSy, toSx, toSy, startTime, endTime);
   }
 }

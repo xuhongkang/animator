@@ -94,4 +94,9 @@ public interface AnimatorModel {
    */
   void addScaleToChange(String name, float fromSx, float fromSy, float toSx, float toSy,
                         int startTime, int endTime);
+
+  /**
+   * Builds the model with the shape properties so far.
+   */
+  void build();
 }
