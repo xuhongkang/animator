@@ -149,4 +149,24 @@ public class ShapeProperty {
       throw new IllegalArgumentException("EndTime precedes StartTime in ShapeProperty Constructor.");
     }
   }
+
+  @Override
+  public boolean equals(Object other) {
+    ShapeProperty otherShapeProp = (ShapeProperty) other;
+
+    return otherShapeProp.shape == this.shape
+            && otherShapeProp.disApTime == this.disApTime
+            && otherShapeProp.moveTime.equals(this.moveTime)
+            && otherShapeProp.moveTar.equals(this.moveTar)
+            && otherShapeProp.colorTime.equals(this.colorTime)
+            && otherShapeProp.colorTar.equals(this.colorTar)
+            && otherShapeProp.scaleTime.equals(this.scaleTime)
+            && otherShapeProp.scaleTar.equals(this.scaleTar);
+  }
+
+  @Override
+  public int hashCode() {
+    return java.util.Objects.hash(shape, disApTime, moveTime, moveTar, colorTime, colorTar,
+            scaleTime, scaleTar);
+  }
 }

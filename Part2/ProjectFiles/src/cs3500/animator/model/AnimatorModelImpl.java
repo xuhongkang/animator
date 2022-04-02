@@ -3,7 +3,8 @@ package cs3500.animator.model;
 import java.util.HashMap;
 
 public class AnimatorModelImpl implements AnimatorModel {
-  HashMap<String, ShapeProperty> properties;
+
+  private HashMap<String, ShapeProperty> properties;
 
   public AnimatorModelImpl() {
     this.properties = new HashMap<String, ShapeProperty>();
@@ -76,4 +77,10 @@ public class AnimatorModelImpl implements AnimatorModel {
     }
     this.properties.get(name).addScaleToChange(fromSx, fromSy, toSx, toSy, startTime, endTime);
   }
+
+  public ShapeProperty getProperty(String key) {
+    return this.properties.get(key);
+  }
+
+
 }
