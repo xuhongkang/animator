@@ -5,7 +5,7 @@ import java.io.IOException;
 /**
  * Basic view for the animator.
  */
-public interface AnimatorView {
+public interface TextAnimatorView {
 
   /**
    * Renders an error message.

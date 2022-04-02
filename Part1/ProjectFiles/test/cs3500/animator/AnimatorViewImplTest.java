@@ -11,8 +11,8 @@ import cs3500.animator.model.BasicColor;
 import cs3500.animator.model.BasicShape;
 import cs3500.animator.model.Motion;
 import cs3500.animator.model.ShapeState;
-import cs3500.animator.view.AnimatorView;
-import cs3500.animator.view.AnimatorViewImpl;
+import cs3500.animator.view.TextAnimatorView;
+import cs3500.animator.view.TextAnimatorViewImpl;
 
 import static org.junit.Assert.assertEquals;
 
@@ -22,7 +22,7 @@ import static org.junit.Assert.assertEquals;
 public class AnimatorViewImplTest {
   private AnimatorModel model1;
   private AnimatorModel model2;
-  private AnimatorView view1;
+  private TextAnimatorView view1;
   private String tag1;
   private Motion m1;
   private Motion m2;
@@ -58,28 +58,28 @@ public class AnimatorViewImplTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void testFailedViewBuiltOne() {
-    AnimatorView failedBCNullModel = new AnimatorViewImpl(null, System.out);
+    TextAnimatorView failedBCNullModel = new TextAnimatorViewImpl(null, System.out);
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void testFailedViewBuiltTwo() {
-    AnimatorView failedBCNullOutput = new AnimatorViewImpl(
+    TextAnimatorView failedBCNullOutput = new TextAnimatorViewImpl(
             new AnimatorModelImpl(), null);
   }
 
   @Test
   public void testSuccessfulBuilt() {
-    AnimatorView successfulBuilt = new AnimatorViewImpl(
+    TextAnimatorView successfulBuilt = new TextAnimatorViewImpl(
             new AnimatorModelImpl(), System.out);
 
-    assertEquals(successfulBuilt.getClass(), AnimatorViewImpl.class);
+    assertEquals(successfulBuilt.getClass(), TextAnimatorViewImpl.class);
   }
 
   @Test
   public void testViewMessageThrowsException() throws IOException {
     boolean exceptionCaught = false;
 
-    view1 = new AnimatorViewImpl(model1, new FailingAppendable());
+    view1 = new TextAnimatorViewImpl(model1, new FailingAppendable());
 
     try {
       view1.viewMessage("R");
@@ -95,7 +95,7 @@ public class AnimatorViewImplTest {
 
     StringBuilder output = new StringBuilder();
 
-    view1 = new AnimatorViewImpl(model1, output);
+    view1 = new TextAnimatorViewImpl(model1, output);
 
     view1.viewMessage("R");
 
@@ -106,7 +106,7 @@ public class AnimatorViewImplTest {
   public void testViewStateThrowsException() throws IOException {
     boolean exceptionCaught = false;
 
-    view1 = new AnimatorViewImpl(model1, new FailingAppendable());
+    view1 = new TextAnimatorViewImpl(model1, new FailingAppendable());
 
     try {
       view1.viewState();
@@ -135,7 +135,7 @@ public class AnimatorViewImplTest {
 
     model1.addMotion(motionBuilder.build());
 
-    view1 = new AnimatorViewImpl(model1, output);
+    view1 = new TextAnimatorViewImpl(model1, output);
 
     view1.viewState();
 
@@ -167,11 +167,11 @@ public class AnimatorViewImplTest {
     model2.addState(tag2, ss4, ss5);
 
     Appendable a1 = new StringBuilder("");
-    view1 = new AnimatorViewImpl(model1, a1);
+    view1 = new TextAnimatorViewImpl(model1, a1);
     view1.viewState();
 
     Appendable a2 = new StringBuilder("");
-    AnimatorView view2 = new AnimatorViewImpl(model2, a2);
+    TextAnimatorView view2 = new TextAnimatorViewImpl(model2, a2);
     view2.viewState();
 
     assertEquals(a1.toString(), a2.toString());

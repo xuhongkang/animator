@@ -15,8 +15,8 @@ import cs3500.animator.controller.commands.TagCommand;
 import cs3500.animator.controller.commands.TimeCommand;
 import cs3500.animator.model.AnimatorModel;
 import cs3500.animator.model.Motion;
-import cs3500.animator.view.AnimatorView;
-import cs3500.animator.view.AnimatorViewImpl;
+import cs3500.animator.view.TextAnimatorView;
+import cs3500.animator.view.TextAnimatorViewImpl;
 
 // Don't need to worry about controller for this assignment.
 
@@ -25,7 +25,7 @@ import cs3500.animator.view.AnimatorViewImpl;
  */
 public class AnimatorControllerImpl implements AnimatorController {
   private Readable input;
-  private AnimatorView view;
+  private TextAnimatorView view;
   private AnimatorModel model;
 
   /**
@@ -47,7 +47,7 @@ public class AnimatorControllerImpl implements AnimatorController {
     this.input = input;
     this.model = model;
 
-    this.view = new AnimatorViewImpl(this.model, output);
+    this.view = new TextAnimatorViewImpl(this.model, output);
   }
 
   @Override
