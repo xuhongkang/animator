@@ -12,6 +12,21 @@ public class ShapeProperty {
   private ArrayList<Integer> scaleTime;
   private ArrayList<float[]> scaleTar;
 
+  /**
+   * Copy Constructor for Shape Property
+   * @param sp is the shape property to copy
+   */
+  public ShapeProperty(ShapeProperty sp) {
+    this.shape = sp.shape;
+    this.disApTime = sp.disApTime;
+    this.moveTime = this.dCopyTList(sp.moveTime);
+    this.moveTar = this.dCopyTars(sp.moveTar);
+    this.colorTime = this.dCopyTList(sp.colorTime);
+    this.colorTar = this.dCopyTars(sp.colorTar);
+    this.scaleTime = this.dCopyTList(sp.scaleTime);
+    this.scaleTar = this.dCopyTars(sp.scaleTar);
+  }
+
   public ShapeProperty(BasicShape shape,
                        float cx, float cy,
                        float sw, float sh,
@@ -45,6 +60,27 @@ public class ShapeProperty {
     this.scaleTar = new ArrayList<>();
     float[] nScale = new float[] {sw, sh};
     this.scaleTar.add(nScale);
+  }
+
+  private ArrayList<Integer> dCopyTList(ArrayList<Integer> og) {
+    ArrayList<Integer> rList = new ArrayList<Integer>();
+    for (int i = 0; i < og.size(); i++) {
+      rList.add(og.get(i));
+    }
+    return rList;
+  }
+
+  private ArrayList<float[]> dCopyTars(ArrayList<float[]> og) {
+    ArrayList<float[]> rList = new ArrayList<float[]>();
+    for (int i = 0; i < og.size(); i++) {
+      float[] ptInfo = og.get(i);
+      float[] cptInfo = new float[ptInfo.length - 1];
+      for (int j = 0; j < ptInfo.length; j++) {
+        cptInfo[j] = ptInfo[j];
+      }
+      rList.add(cptInfo);
+    }
+    return rList;
   }
 
   public void build() {

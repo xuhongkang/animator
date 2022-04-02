@@ -98,5 +98,5 @@ public interface AnimatorModel {
   /**
    * Builds the model with the shape properties so far.
    */
-  void build();
+  AnimatorModel build();
 }

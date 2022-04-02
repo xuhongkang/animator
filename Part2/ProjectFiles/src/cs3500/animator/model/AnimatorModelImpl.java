@@ -6,15 +6,23 @@ public class AnimatorModelImpl implements AnimatorModel {
 
   private HashMap<String, ShapeProperty> properties;
 
+  public AnimatorModelImpl(AnimatorModelImpl model) {
+    for (String tag : model.properties.keySet()) {
+      this.properties.put(tag, new ShapeProperty(model.properties.get(tag)));
+    }
+  }
+
   public AnimatorModelImpl() {
     this.properties = new HashMap<String, ShapeProperty>();
   }
 
   @Override
-  public void build() {
-    for (ShapeProperty s : this.properties.values()) {
+  public AnimatorModel build() {
+    AnimatorModelImpl rModel = new AnimatorModelImpl(this);
+    for (ShapeProperty s : rModel.properties.values()) {
       s.build();
     }
+    return rModel;
   }
 
   @Override
