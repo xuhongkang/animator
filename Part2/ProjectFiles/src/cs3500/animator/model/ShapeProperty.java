@@ -205,4 +205,5 @@ public class ShapeProperty {
     return java.util.Objects.hash(shape, disApTime, moveTime, moveTar, colorTime, colorTar,
             scaleTime, scaleTar);
   }
+
 }

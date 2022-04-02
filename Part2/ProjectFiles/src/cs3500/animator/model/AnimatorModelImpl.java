@@ -6,6 +6,10 @@ public class AnimatorModelImpl implements AnimatorModel {
 
   private HashMap<String, ShapeProperty> properties;
 
+  /**
+   * Copy constructor.
+   * @param model     The model to be copied.
+   */
   public AnimatorModelImpl(AnimatorModelImpl model) {
     for (String tag : model.properties.keySet()) {
       this.properties.put(tag, new ShapeProperty(model.properties.get(tag)));
@@ -46,7 +50,7 @@ public class AnimatorModelImpl implements AnimatorModel {
                            float red, float green, float blue,
                            int startOfLife, int endOfLife) {
     if (this.properties.containsKey(name)) {
-      throw new IllegalArgumentException("Oval Already Present");
+      throw new IllegalArgumentException("Rectangle Already Present");
     }
     ShapeProperty nShapeProperty = new ShapeProperty(BasicShape.RECTANGLE, lx, ly, width, height, red,
             green, blue, startOfLife, endOfLife);
@@ -86,9 +90,11 @@ public class AnimatorModelImpl implements AnimatorModel {
     this.properties.get(name).addScaleToChange(fromSx, fromSy, toSx, toSy, startTime, endTime);
   }
 
-  public ShapeProperty getProperty(String key) {
-    return this.properties.get(key);
+  @Override
+  public ShapeProperty getShapeProperty(String key) {
+    return new ShapeProperty(this.properties.get(key));
   }
+
 
 
 }

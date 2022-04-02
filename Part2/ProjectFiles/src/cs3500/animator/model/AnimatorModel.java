@@ -99,4 +99,9 @@ public interface AnimatorModel {
    * Builds the model with the shape properties so far.
    */
   AnimatorModel build();
+
+  /**
+   * For getting a specific ShapeProperty stored in the HashMap
+   */
+  ShapeProperty getShapeProperty(String key);
 }
