@@ -1,5 +1,7 @@
 package cs3500.animator.model;
 
+import java.util.Set;
+
 public interface AnimatorModel {
   /**
    * Add a new oval to the model with the given specifications.
@@ -101,7 +103,12 @@ public interface AnimatorModel {
   AnimatorModel build();
 
   /**
-   * For getting a specific ShapeProperty stored in the HashMap
+   * For getting a specific ShapeProperty stored in the HashMap.
    */
   ShapeProperty getShapeProperty(String key);
+
+  /**
+   * Returns a set of all the tags of shapes present in the model.
+   */
+  Set<String> getTags();
 }

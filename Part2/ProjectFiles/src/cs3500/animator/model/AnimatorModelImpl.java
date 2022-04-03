@@ -1,6 +1,8 @@
 package cs3500.animator.model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
 
 public class AnimatorModelImpl implements AnimatorModel {
 
@@ -11,6 +13,7 @@ public class AnimatorModelImpl implements AnimatorModel {
    * @param model     The model to be copied.
    */
   public AnimatorModelImpl(AnimatorModelImpl model) {
+    this.properties = new HashMap<String, ShapeProperty>();
     for (String tag : model.properties.keySet()) {
       this.properties.put(tag, new ShapeProperty(model.properties.get(tag)));
     }
@@ -18,6 +21,11 @@ public class AnimatorModelImpl implements AnimatorModel {
 
   public AnimatorModelImpl() {
     this.properties = new HashMap<String, ShapeProperty>();
+  }
+
+  @Override
+  public Set<String> getTags() {
+    return this.properties.keySet();
   }
 
   @Override
