@@ -1,26 +1,43 @@
 package cs3500.animator.model;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Set;
 
 public class AnimatorModelImpl implements AnimatorModel {
 
-  private HashMap<String, ShapeProperty> properties;
+  private Map<String, ShapeProperty> properties;
+  int width = 0;
+  int height = 0;
+
+  @Override
+  public int getMaxEndTime() {
+    ArrayList<ShapeProperty> shapeProperties = new ArrayList<ShapeProperty>();
+    for (String s : this.properties.keySet()) {
+      shapeProperties.add(this.getShapeProperty(s));
+    }
+    ArrayList<Integer> endTimes = new ArrayList<Integer>();
+    for (ShapeProperty sp : shapeProperties) {
+      endTimes.add(sp.getDisApTime());
+    }
+    return Collections.max(endTimes);
+  }
 
   /**
    * Copy constructor.
    * @param model     The model to be copied.
    */
   public AnimatorModelImpl(AnimatorModelImpl model) {
-    this.properties = new HashMap<String, ShapeProperty>();
+    this.properties = new LinkedHashMap<String, ShapeProperty>();
     for (String tag : model.properties.keySet()) {
       this.properties.put(tag, new ShapeProperty(model.properties.get(tag)));
     }
   }
 
   public AnimatorModelImpl() {
-    this.properties = new HashMap<String, ShapeProperty>();
+    this.properties = new LinkedHashMap<String, ShapeProperty>();
   }
 
   @Override
@@ -35,6 +52,24 @@ public class AnimatorModelImpl implements AnimatorModel {
       s.build();
     }
     return rModel;
+  }
+
+  @Override
+  public void setBounds(int width, int height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  @Override
+  public String getSVG() {
+    String rString = "";
+    rString += String.format("<svg width=\"%d\" height=\"%d\" version=\"1.1\"\n" +
+            "     xmlns=\"http://www.w3.org/2000/svg\">\n", this.width, this.height);
+    for (String tag : this.properties.keySet()) {
+      rString += this.properties.get(tag).getSVG(tag);
+    }
+    rString += "</svg>";
+    return rString;
   }
 
   @Override
@@ -73,7 +108,8 @@ public class AnimatorModelImpl implements AnimatorModel {
     if (!this.properties.containsKey(name)) {
       throw new IllegalArgumentException("Target Shape Not Present.");
     }
-    this.properties.get(name).addMove(moveFromX, moveFromY, moveToX, moveToY, startTime, endTime);
+    this.properties.get(name).addMove(moveFromX, moveFromY, moveToX, moveToY,
+            startTime, endTime);
   }
 
   @Override
@@ -84,7 +120,8 @@ public class AnimatorModelImpl implements AnimatorModel {
     if (!this.properties.containsKey(name)) {
       throw new IllegalArgumentException("Target Shape Not Present.");
     }
-    this.properties.get(name).addColorChange(oldR, oldG, oldB, newR, newG, newB, startTime, endTime);
+    this.properties.get(name).addColorChange(oldR, oldG, oldB, newR, newG, newB,
+            startTime, endTime);
   }
 
   @Override

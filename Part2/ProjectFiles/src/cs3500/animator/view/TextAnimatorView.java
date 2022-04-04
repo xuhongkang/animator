@@ -1,0 +1,22 @@
+package cs3500.animator.view;
+
+import java.io.IOException;
+
+/**
+ * Basic view for the animator.
+ */
+public interface TextAnimatorView {
+  /**
+   * Renders an error message.
+   * @throws IOException if there's a problem with handling inputs and outputs.
+   */
+  void viewMessage(String message) throws IOException;
+
+  void writeToFile(String filename);
+
+  /**
+   * Renders the state of the animator model.
+   * @throws IOException if there's a problem with handling inputs and outputs.
+   */
+  void viewState() throws IOException;
+}

@@ -12,7 +12,8 @@ public class TweenModelBuilderImpl implements TweenModelBuilder<AnimatorModel> {
 
   @Override
   public TweenModelBuilder<AnimatorModel> setBounds(int width, int height) {
-    return null;
+    model.setBounds(width, height);
+    return this;
   }
 
   @Override

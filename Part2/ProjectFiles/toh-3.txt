@@ -1,0 +1,28 @@
+canvas 410 220
+rectangle name disk1 min-x 190.0 min-y 180.0 width 20.0 height 30 color 0.0018560142 0.19547537 0.35467055 from 1 to 302
+rectangle name disk2 min-x 167.5 min-y 210.0 width 65.0 height 30 color 0.02582317 0.9691984 0.16393086 from 1 to 302
+rectangle name disk3 min-x 145.0 min-y 240.0 width 110.0 height 30 color 0.044487324 0.17937791 0.6875181 from 1 to 302
+move name disk1 moveto 190.0 180.0 190.0 50 from 25 to 35
+move name disk1 moveto 190.0 50 490.0 50 from 36 to 46
+move name disk1 moveto 490.0 50 490.0 240.0 from 47 to 57
+move name disk2 moveto 167.5 210.0 167.5 50 from 57 to 67
+move name disk2 moveto 167.5 50 317.5 50 from 68 to 78
+move name disk2 moveto 317.5 50 317.5 240.0 from 79 to 89
+move name disk1 moveto 490.0 240.0 490.0 50 from 89 to 99
+move name disk1 moveto 490.0 50 340.0 50 from 100 to 110
+move name disk1 moveto 340.0 50 340.0 210.0 from 111 to 121
+move name disk3 moveto 145.0 240.0 145.0 50 from 121 to 131
+move name disk3 moveto 145.0 50 445.0 50 from 132 to 142
+move name disk3 moveto 445.0 50 445.0 240.0 from 143 to 153
+change-color name disk3 colorto 0.044487324 0.17937791 0.6875181 0 1 0  from 153 to 161
+move name disk1 moveto 340.0 210.0 340.0 50 from 153 to 163
+move name disk1 moveto 340.0 50 190.0 50 from 164 to 174
+move name disk1 moveto 190.0 50 190.0 240.0 from 175 to 185
+move name disk2 moveto 317.5 240.0 317.5 50 from 185 to 195
+move name disk2 moveto 317.5 50 467.5 50 from 196 to 206
+move name disk2 moveto 467.5 50 467.5 210.0 from 207 to 217
+change-color name disk2 colorto 0.02582317 0.9691984 0.16393086 0 1 0  from 217 to 225
+move name disk1 moveto 190.0 240.0 190.0 50 from 217 to 227
+move name disk1 moveto 190.0 50 490.0 50 from 228 to 238
+move name disk1 moveto 490.0 50 490.0 180.0 from 239 to 249
+change-color name disk1 colorto 0.0018560142 0.19547537 0.35467055 0 1 0  from 249 to 257

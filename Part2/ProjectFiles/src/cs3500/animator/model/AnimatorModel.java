@@ -4,6 +4,19 @@ import java.util.Set;
 
 public interface AnimatorModel {
   /**
+   * Set the bounds of the canvas for the animation.
+   * @param width the width in pixels of the canvas
+   * @param height the height in pixels of the canvas
+   */
+  void setBounds(int width, int height);
+
+  /**
+   * Gets the svg string from the model.
+   * @return the svg command.
+   */
+  String getSVG();
+
+  /**
    * Add a new oval to the model with the given specifications.
    *
    * @param name        the unique name given to this shape
@@ -106,6 +119,8 @@ public interface AnimatorModel {
    * For getting a specific ShapeProperty stored in the HashMap.
    */
   ShapeProperty getShapeProperty(String key);
+
+  int getMaxEndTime();
 
   /**
    * Returns a set of all the tags of shapes present in the model.

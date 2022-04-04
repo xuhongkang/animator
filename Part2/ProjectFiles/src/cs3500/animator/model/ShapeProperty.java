@@ -28,6 +28,121 @@ public class ShapeProperty {
     this.scaleTar = this.dCopyTars(sp.scaleTar);
   }
 
+  public int getStartTime() {
+    return this.moveTime.get(0);
+  }
+
+  public int getDisApTime() {
+    return this.disApTime;
+  }
+
+  private String getSVGLineM() {
+    String rString = "";
+    if (this.shape.equals(BasicShape.RECTANGLE)) {
+      for (int t = 0; t < moveTime.size(); t++) {
+        if (t == moveTime.size() - 1) {
+          break;
+        }
+        rString += String.format("<animate attributeType=\"xml\" begin=\"%dms\" dur=\"%dms\" " +
+                        "attributeName=\"x\" from=\"%f\" to=\"%f\" fill=\"freeze\" />\n",
+                moveTime.get(t), moveTime.get(t+1) - moveTime.get(t), moveTar.get(t)[0],
+                moveTar.get(t+1)[0]);
+        rString += String.format("<animate attributeType=\"xml\" begin=\"%dms\" dur=\"%dms\" " +
+                        "attributeName=\"y\" from=\"%f\" to=\"%f\" fill=\"freeze\" />\n",
+                moveTime.get(t), moveTime.get(t+1) - moveTime.get(t), moveTar.get(t)[1],
+                moveTar.get(t+1)[1]);
+      }
+    } else {
+      for (int t = 0; t < moveTime.size(); t++) {
+        if (t == moveTime.size() - 1) {
+          break;
+        }
+        rString += String.format("<animate attributeType=\"xml\" begin=\"%dms\" dur=\"%dms\" " +
+                        "attributeName=\"cx\" from=\"%f\" to=\"%f\" fill=\"freeze\" />\n", moveTime.get(t),
+                moveTime.get(t+1) - moveTime.get(t), moveTar.get(t)[0], moveTar.get(t+1)[0]);
+        rString += String.format("<animate attributeType=\"xml\" begin=\"%dms\" dur=\"%dms\" " +
+                        "attributeName=\"cy\" from=\"%f\" to=\"%f\" fill=\"freeze\" />\n",
+                moveTime.get(t), moveTime.get(t+1) - moveTime.get(t), moveTar.get(t)[1],
+                moveTar.get(t+1)[1]);
+      }
+    }
+    return rString;
+  }
+
+  private String getSVGLineC() {
+    String rString = "";
+    for (int t = 0; t < colorTime.size(); t++) {
+      if (t == colorTime.size() - 1) {
+        break;
+      }
+      rString += String.format("<animate attributeType=\"xml\" begin=\"%dms\" dur=\"%dms\" " +
+                      "attributeName=\"fill\" from=\"rgb(%f%%,%f%%,%f%%)\" to=\"rgb(%f%%,%f%%,%f%%)\" " +
+                      "fill=\"freeze\" />\n", colorTime.get(t),
+              colorTime.get(t+1) - colorTime.get(t), colorTar.get(t)[0] * 100, colorTar.get(t)[1] * 100,
+              colorTar.get(t)[2] * 100, colorTar.get(t+1)[0] * 100, colorTar.get(t+1)[1] * 100, colorTar.get(t+1)[2] * 100);
+    }
+    return rString;
+  }
+
+  private String getSVGLineS() {
+    String rString = "";
+    if (this.shape.equals(BasicShape.RECTANGLE)) {
+      for (int t = 0; t < scaleTime.size(); t++) {
+        if (t == scaleTime.size() - 1) {
+          break;
+        }
+        rString += String.format("<animate attributeType=\"xml\" begin=\"%dms\" dur=\"%dms\" " +
+                        "attributeName=\"width\" from=\"%f\" to=\"%f\" fill=\"freeze\" />\n",
+                scaleTime.get(t), scaleTime.get(t+1) - scaleTime.get(t), scaleTar.get(t)[0],
+                scaleTar.get(t+1)[0]);
+        rString += String.format("<animate attributeType=\"xml\" begin=\"%dms\" dur=\"%dms\" " +
+                        "attributeName=\"height\" from=\"%f\" to=\"%f\" fill=\"freeze\" />\n",
+                scaleTime.get(t), scaleTime.get(t+1) - scaleTime.get(t), scaleTar.get(t)[1],
+                scaleTar.get(t+1)[1]);
+      }
+    } else {
+      for (int t = 0; t < scaleTime.size(); t++) {
+        if (t == scaleTime.size() - 1) {
+          break;
+        }
+        rString += String.format("<animate attributeType=\"xml\" begin=\"%dms\" dur=\"%dms\" " +
+                        "attributeName=\"rx\" from=\"%f\" to=\"%f\" fill=\"freeze\" />\n",
+                scaleTime.get(t), scaleTime.get(t+1) - scaleTime.get(t),
+                scaleTar.get(t)[0], scaleTar.get(t+1)[0]);
+        rString += String.format("<animate attributeType=\"xml\" begin=\"%dms\" dur=\"%dms\" " +
+                        "attributeName=\"ry\" from=\"%f\" to=\"%f\" fill=\"freeze\" />\n",
+                scaleTime.get(t), scaleTime.get(t+1) - scaleTime.get(t), scaleTar.get(t)[1],
+                scaleTar.get(t+1)[1]);
+      }
+    }
+    return rString;
+  }
+
+  public String getSVG(String tag) {
+    String rString = "";
+    if (this.shape.equals(BasicShape.RECTANGLE)) {
+      rString += String.format("<rect id=\"%s\" x=\"%f\" y=\"%f\" width=\"%f\" " +
+              "height=\"%f\" fill=\"rgb(%f,%f,%f)\" visibility=\"visible\" >\n", tag, moveTar.get(0)[0],
+              moveTar.get(0)[1], scaleTar.get(0)[0], scaleTar.get(0)[1], colorTar.get(0)[0],
+              colorTar.get(0)[1], colorTar.get(0)[2]);
+    } else {
+      rString += String.format("<ellipse id=\"%s\" cx=\"%f\" cy=\"%f\" rx=\"%f\" " +
+              "ry=\"%f\" fill=\"rgb(%f,%f,%f)\" visibility=\"visible\" >\n", tag, moveTar.get(0)[0],
+              moveTar.get(0)[1], scaleTar.get(0)[0], scaleTar.get(0)[1], colorTar.get(0)[0],
+              colorTar.get(0)[1], colorTar.get(0)[2]);
+
+    }
+    rString += this.getSVGLineM();
+    rString += this.getSVGLineC();
+    rString += this.getSVGLineS();
+    if (this.shape.equals(BasicShape.RECTANGLE)) {
+      rString += "</rect>";
+    } else {
+      rString += "</ellipse>";
+    }
+    return rString;
+  }
+
   public BasicShape getShape() {
     return this.shape;
   }
@@ -39,16 +154,12 @@ public class ShapeProperty {
   }
 
   private float[] getSpecValAt(ArrayList<Integer> intTSteps, ArrayList<float[]> vals, int timeStep) {
-    ArrayList<Integer> tSteps = new ArrayList<>();
-    for (int t = 0; t < intTSteps.size(); t++) {
-      tSteps.add(intTSteps.get(t) * 1000);
-    }
-    if (tSteps.contains(timeStep)) {
-      return vals.get(tSteps.indexOf(timeStep));
+    if (intTSteps.contains(timeStep)) {
+      return vals.get(intTSteps.indexOf(timeStep));
     } else {
       int rightBound = 0;
-      for (int i = 0; i < tSteps.size(); i++) {
-        if (tSteps.get(i) > timeStep) {
+      for (int i = 0; i < intTSteps.size(); i++) {
+        if (intTSteps.get(i) > timeStep) {
           break;
         } else {
           rightBound += 1;
@@ -57,8 +168,8 @@ public class ShapeProperty {
       if (rightBound == 0) {
         throw new IllegalArgumentException("Invalid timeStep, starts before shape startTime.");
       }
-      int rightTime = tSteps.get(rightBound);
-      int leftTime = tSteps.get(rightBound - 1);
+      int rightTime = intTSteps.get(rightBound);
+      int leftTime = intTSteps.get(rightBound - 1);
       float[] right = vals.get(rightBound);
       float[] left = vals.get(rightBound - 1);
       float[] rList = new float[right.length];
@@ -98,7 +209,7 @@ public class ShapeProperty {
     ArrayList<Integer> t3 = this.dCopyTList(this.scaleTime);
     ArrayList<Integer> tList = this.getCombTList(t1, t2, t3);
     for (int i = 0; i < tList.size(); i ++) {
-      int cTime = tList.get(i) * 1000;
+      int cTime = tList.get(i);
       float[] xy = this.getSpecValAt(this.moveTime, this.moveTar, cTime);
       float[] rgb = this.getSpecValAt(this.colorTime, this.colorTar, cTime);
       float[] wh = this.getSpecValAt(this.scaleTime, this.scaleTar, cTime);
@@ -249,8 +360,11 @@ public class ShapeProperty {
     if (matchPos == -1) {
       return false;
     } else {
-      if (!tList.get(matchPos).equals(vals)) {
-        throw new IllegalArgumentException("Does not match current settings");
+      float[] tarVal = vals.get(matchPos);
+      for (int i = 0; i < tar.length; i++) {
+        if (tar[i] != tarVal[i]) {
+          throw new IllegalArgumentException("Does not match current settings");
+        }
       }
       return true;
     }
@@ -294,5 +408,4 @@ public class ShapeProperty {
     return java.util.Objects.hash(shape, disApTime, moveTime, moveTar, colorTime, colorTar,
             scaleTime, scaleTar);
   }
-
 }
