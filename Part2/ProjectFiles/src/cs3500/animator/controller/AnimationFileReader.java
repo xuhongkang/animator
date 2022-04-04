@@ -98,7 +98,6 @@ public class AnimationFileReader {
         default:
           throw new IllegalStateException("Unidentified token " + command + " "
                   + "read from file");
-
       }
     }
     return builder.build();

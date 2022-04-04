@@ -12,6 +12,49 @@ public class AnimatorModelImpl implements AnimatorModel {
   int width = 0;
   int height = 0;
 
+  /**
+   * Copy constructor.
+   * @param model     The model to be copied.
+   */
+  public AnimatorModelImpl(AnimatorModelImpl model) {
+    this.properties = new LinkedHashMap<String, ShapeProperty>();
+    for (String tag : model.properties.keySet()) {
+      this.properties.put(tag, new ShapeProperty(model.properties.get(tag)));
+    }
+  }
+
+  @Override
+  public ArrayList<ArrayList<float[][]>> getValsAtInterval(int delay) {
+    ArrayList<ArrayList<float[][]>> rList = new ArrayList<>();
+    for (int realTime = 0; realTime < this.getMaxEndTime(); realTime += delay) {
+      ArrayList<float[][]> valSetAtTimeStep = new ArrayList<float[][]>();
+      for (String tag: this.properties.keySet()) {
+        ShapeProperty sp = this.properties.get(tag);
+        if (sp.getStartTime() <= realTime && sp.getDisApTime() > realTime) {
+          valSetAtTimeStep.add(sp.getValsAt(realTime));
+        }
+      }
+      rList.add(valSetAtTimeStep);
+    }
+    return rList;
+  }
+
+  @Override
+  public ArrayList<ArrayList<BasicShape>> getShapesAtInterval(int delay) {
+    ArrayList<ArrayList<BasicShape>> rList = new ArrayList<>();
+    for (int realTime = 0; realTime < this.getMaxEndTime(); realTime += delay) {
+      ArrayList<BasicShape> shapeAtTimeStep = new ArrayList<BasicShape>();
+      for (String tag: this.properties.keySet()) {
+        ShapeProperty sp = this.properties.get(tag);
+        if (sp.getStartTime() <= realTime && sp.getDisApTime() > realTime) {
+          shapeAtTimeStep.add(sp.getShape());
+        }
+      }
+      rList.add(shapeAtTimeStep);
+    }
+    return rList;
+  }
+
   @Override
   public int getMaxEndTime() {
     ArrayList<ShapeProperty> shapeProperties = new ArrayList<ShapeProperty>();
@@ -25,15 +68,9 @@ public class AnimatorModelImpl implements AnimatorModel {
     return Collections.max(endTimes);
   }
 
-  /**
-   * Copy constructor.
-   * @param model     The model to be copied.
-   */
-  public AnimatorModelImpl(AnimatorModelImpl model) {
-    this.properties = new LinkedHashMap<String, ShapeProperty>();
-    for (String tag : model.properties.keySet()) {
-      this.properties.put(tag, new ShapeProperty(model.properties.get(tag)));
-    }
+  @Override
+  public int[] getCanvasDim() {
+    return new int[]{this.width, this.height};
   }
 
   public AnimatorModelImpl() {

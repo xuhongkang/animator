@@ -24,6 +24,7 @@ public class MainArgsHandler {
       TweenModelBuilder modelBuilder = new TweenModelBuilderImpl(model);
       AnimationFileReader fileReader = new AnimationFileReader();
       model = (AnimatorModel) fileReader.readFile(inputFileName, modelBuilder);
+      model = model.build();
       switch (viewTypeString) {
         case ("text"):
           TextAnimatorView textView = new TextAnimatorViewImpl(model);
@@ -31,7 +32,10 @@ public class MainArgsHandler {
           textView.viewState();
           break;
         case ("visual"):
-          VisualAnimatorView visualView = new VisualAnimatorViewImpl(model, speed);
+          int delay = (int) 1000/speed;
+          VisualAnimatorView visualView = new VisualAnimatorViewImpl(model.getCanvasDim()[0], model.getCanvasDim()[1], delay);
+          visualView.setValues(model.getValsAtInterval(delay), model.getShapesAtInterval(delay));
+          visualView.refresh();
           break;
         case ("svg"):
           SVGAnimatorView svgView = new SVGAnimatorViewImpl(model);

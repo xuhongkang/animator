@@ -13,6 +13,41 @@ public class ShapeProperty {
   private ArrayList<Integer> scaleTime;
   private ArrayList<float[]> scaleTar;
 
+  public ShapeProperty(BasicShape shape,
+                       float cx, float cy,
+                       float sw, float sh,
+                       float red, float green, float blue,
+                       int startTime, int endTime) {
+    if (shape == null) {
+      throw new IllegalArgumentException("Null Shape in ShapeProperty Constructor.");
+    }
+
+    this.checkInputSETime(startTime, endTime);
+    this.shape = shape;
+    this.disApTime = endTime;
+
+    this.moveTime = new ArrayList<>();
+    this.moveTime.add(startTime);
+
+    this.moveTar = new ArrayList<>();
+    float[] nPos = new float[] {cx, cy};
+    this.moveTar.add(nPos);
+
+    this.colorTime = new ArrayList<>();
+    this.colorTime.add(startTime);
+
+    this.colorTar = new ArrayList<>();
+    float[] nColor = new float[] {red, green, blue};
+    this.colorTar.add(nColor);
+
+    this.scaleTime = new ArrayList<>();
+    this.scaleTime.add(startTime);
+
+    this.scaleTar = new ArrayList<>();
+    float[] nScale = new float[] {sw, sh};
+    this.scaleTar.add(nScale);
+  }
+
   /**
    * Copy Constructor for Shape Property
    * @param sp is the shape property to copy
@@ -168,7 +203,13 @@ public class ShapeProperty {
       if (rightBound == 0) {
         throw new IllegalArgumentException("Invalid timeStep, starts before shape startTime.");
       }
-      int rightTime = intTSteps.get(rightBound);
+      int rightTime;
+      try {
+        rightTime = intTSteps.get(rightBound);
+      } catch (IndexOutOfBoundsException e) {
+        throw new IllegalArgumentException("das");
+      }
+
       int leftTime = intTSteps.get(rightBound - 1);
       float[] right = vals.get(rightBound);
       float[] left = vals.get(rightBound - 1);
@@ -225,41 +266,6 @@ public class ShapeProperty {
       }
     }
     return rString;
-  }
-
-  public ShapeProperty(BasicShape shape,
-                       float cx, float cy,
-                       float sw, float sh,
-                       float red, float green, float blue,
-                       int startTime, int endTime) {
-    if (shape == null) {
-      throw new IllegalArgumentException("Null Shape in ShapeProperty Constructor.");
-    }
-
-    this.checkInputSETime(startTime, endTime);
-    this.shape = shape;
-    this.disApTime = endTime;
-
-    this.moveTime = new ArrayList<>();
-    this.moveTime.add(startTime);
-
-    this.moveTar = new ArrayList<>();
-    float[] nPos = new float[] {cx, cy};
-    this.moveTar.add(nPos);
-
-    this.colorTime = new ArrayList<>();
-    this.colorTime.add(startTime);
-
-    this.colorTar = new ArrayList<>();
-    float[] nColor = new float[] {red, green, blue};
-    this.colorTar.add(nColor);
-
-    this.scaleTime = new ArrayList<>();
-    this.scaleTime.add(startTime);
-
-    this.scaleTar = new ArrayList<>();
-    float[] nScale = new float[] {sw, sh};
-    this.scaleTar.add(nScale);
   }
 
   private ArrayList<Integer> dCopyTList(ArrayList<Integer> og) {

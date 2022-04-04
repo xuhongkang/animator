@@ -1,5 +1,6 @@
 package cs3500.animator.model;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 public interface AnimatorModel {
@@ -120,10 +121,16 @@ public interface AnimatorModel {
    */
   ShapeProperty getShapeProperty(String key);
 
+  ArrayList<ArrayList<BasicShape>> getShapesAtInterval(int delay);
+
   int getMaxEndTime();
+
+  int[] getCanvasDim();
 
   /**
    * Returns a set of all the tags of shapes present in the model.
    */
   Set<String> getTags();
+
+  ArrayList<ArrayList<float[][]>> getValsAtInterval(int delay);
 }

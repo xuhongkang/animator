@@ -61,7 +61,7 @@ public class TweenModelBuilderImpl implements TweenModelBuilder<AnimatorModel> {
 
   @Override
   public AnimatorModel build() {
-    model.build();
+    model = model.build();
     return model;
   }
 }

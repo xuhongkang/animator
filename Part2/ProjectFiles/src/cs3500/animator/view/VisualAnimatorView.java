@@ -1,15 +1,14 @@
 package cs3500.animator.view;
 
-import java.awt.*;
+import java.util.ArrayList;
 
-import cs3500.animator.model.AnimatorModel;
-import cs3500.animator.model.AnimatorModelImpl;
+import cs3500.animator.model.BasicShape;
 
 public interface VisualAnimatorView {
 
-  void switchAnimatorModel(AnimatorModelImpl model);
+  void makeVisible();
 
-  void paintComponent(Graphics g);
+  void setValues(ArrayList<ArrayList<float[][]>> valuesList, ArrayList<ArrayList<BasicShape>> shapesList);
 
   void refresh();
 }

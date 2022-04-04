@@ -19,7 +19,7 @@ public class TextAnimatorViewImpl implements TextAnimatorView {
    * @param model is the animator model
    */
   public TextAnimatorViewImpl(AnimatorModel model) {
-    this(model.build(), System.out);
+    this(model, System.out);
   }
 
   /**
