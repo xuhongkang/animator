@@ -17,13 +17,10 @@ In addition to this, this level must also support a new UI feature. One should b
 
 Completion of this feature will be evidenced by the following features in our program:
 
-The ability for a user to toggle between outline and fill modes using the user interface only in the interactive view.
-
-The ability of our program to show the new shape in an animation in your interactive view.
-
-The ability of our program to show the new shape correctly in an SVG file produced by your program.
-
-The ability of our program to accept this shape as part of an input file: this must be an extension , not a replacement , of the existing file format.
+- The ability for a user to toggle between outline and fill modes using the user interface only in the interactive view.
+- The ability of our program to show the new shape in an animation in your interactive view.
+- The ability of our program to show the new shape correctly in an SVG file produced by your program.
+- The ability of our program to accept this shape as part of an input file: this must be an extension , not a replacement , of the existing file format.
 
 2 Level 2: Discrete-time playing of animation
 Sometimes it is quicker to view an entire animation using a few discrete frames, rather than play the entire animation at the given speed. An example of this may be when we fast-forward a movie on Netflix, and watch individual frames go by rather than seeing a smooth but fast play.
@@ -32,9 +29,8 @@ In this tier we will add such a discrete way of playing your animation in the in
 
 Completion of this feature will be evidenced by the following features in our program:
 
-The ability to start, pause, resume and stop the discrete playing of an animation.
-
-The ability to switch between discrete and continuous playing of an animation without having to restart the program or reload the animation.
+- The ability to start, pause, resume and stop the discrete playing of an animation.
+- The ability to switch between discrete and continuous playing of an animation without having to restart the program or reload the animation.
 
 Retain all existing abilities of our interactive view.
 
