@@ -1,4 +1,8 @@
 ## Animator PLUS Project Description
+CS3500: Object-Oriented Design
+
+Instructor: Clark Freifeld
+
 Design: Hongkang Xu
 
 Testing: Shengjun Sun
