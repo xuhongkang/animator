@@ -1,5 +1,6 @@
-## Animator + Project Description
+## Animator PLUS Project Description
 Design: Hongkang Xu
+
 Testing: Shengjun Sun
 
 ### ASSIGNMENT 8 DESCRIPTION:
