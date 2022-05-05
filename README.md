@@ -3,9 +3,9 @@ CS3500: Object-Oriented Design
 
 Instructor: Clark Freifeld
 
-Design: Hongkang Xu
+Design & Development: Hongkang Xu
 
-Testing: Shengjun Sun
+Build & Testing: Shengjun Sun
 
 Collaborators: Andrew Briasco-Stewart, Allison Cross
 
