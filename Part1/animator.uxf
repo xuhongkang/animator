@@ -1,8 +1,0 @@
-<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>20</x><y>10</y><w>210</w><h>120</h></coordinates><panel_attributes>&lt;&lt;AnimatorModel&gt;&gt;
-Package::cs300.animator.model
---
--id: Long
--ClassAttribute: Long
---
-Operation(i: int): int
-AbstractOperation()/</panel_attributes><additional_attributes></additional_attributes></element></diagram>
