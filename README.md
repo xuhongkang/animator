@@ -1,5 +1,5 @@
 ## Animator PLUS Project Description
-CS3500: Object-Oriented Design
+### From CS3500 Object-Oriented Design
 
 Instructor: Clark Freifeld
 
