@@ -7,6 +7,8 @@ Design: Hongkang Xu
 
 Testing: Shengjun Sun
 
+Collaborators: Andrew Briasco-Stewart, Allison Cross
+
 ### ASSIGNMENT 8 DESCRIPTION:
 For this assignment, we had to implement a new add-layer 
 functionality as well as a new realtime add-shape/motion/layer functionality
