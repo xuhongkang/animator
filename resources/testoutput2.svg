@@ -1,0 +1,104 @@
+<svg width="1000" height="300" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<rect id="space" x="0.0" y="0.0" width="1000000.0" height="100000.0" fill="rgb(0,0,128)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+</rect><rect id="redstripe" x="-1300.0" y="100.0" width="1200.0" height="10.0" fill="rgb(252,0,0)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="x" from="-1300.0" to="0.0" begin="50ms" dur="2450ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="y" from="100.0" to="100.0" begin="50ms" dur="2450ms" fill="freeze" />
+</rect><rect id="orangestripe" x="-1300.0" y="110.0" width="1200.0" height="10.0" fill="rgb(252,189,0)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="x" from="-1300.0" to="0.0" begin="50ms" dur="2450ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="y" from="110.0" to="110.0" begin="50ms" dur="2450ms" fill="freeze" />
+</rect><rect id="yellowstripe" x="-1300.0" y="120.0" width="1200.0" height="10.0" fill="rgb(252,252,0)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="x" from="-1300.0" to="0.0" begin="50ms" dur="2450ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="y" from="120.0" to="120.0" begin="50ms" dur="2450ms" fill="freeze" />
+</rect><rect id="greenstripe" x="-1300.0" y="130.0" width="1200.0" height="10.0" fill="rgb(0,252,0)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="x" from="-1300.0" to="0.0" begin="50ms" dur="2450ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="y" from="130.0" to="130.0" begin="50ms" dur="2450ms" fill="freeze" />
+</rect><rect id="bluestripe" x="-1300.0" y="140.0" width="1200.0" height="10.0" fill="rgb(0,0,252)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="x" from="-1300.0" to="0.0" begin="50ms" dur="2450ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="y" from="140.0" to="140.0" begin="50ms" dur="2450ms" fill="freeze" />
+</rect><rect id="purplestripe" x="-1300.0" y="150.0" width="1200.0" height="10.0" fill="rgb(252,0,252)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="x" from="-1300.0" to="0.0" begin="50ms" dur="2450ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="y" from="150.0" to="150.0" begin="50ms" dur="2450ms" fill="freeze" />
+</rect><rect id="poptart" x="-100.0" y="100.0" width="100.0" height="60.0" fill="rgb(210,180,140)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="x" from="-100.0" to="1100.0" begin="50ms" dur="2450ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="y" from="100.0" to="100.0" begin="50ms" dur="2450ms" fill="freeze" />
+</rect><rect id="icing" x="-95.0" y="105.0" width="90.0" height="50.0" fill="rgb(252,182,193)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="x" from="-95.0" to="1105.0" begin="50ms" dur="2450ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="y" from="105.0" to="105.0" begin="50ms" dur="2450ms" fill="freeze" />
+</rect><ellipse id="head" cx="0.0" cy="125.0" rx="30.0" ry="20.0" fill="rgb(142,142,142)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="cx" from="0.0" to="1200.0" begin="50ms" dur="2450ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="cy" from="125.0" to="125.0" begin="50ms" dur="2450ms" fill="freeze" />
+</ellipse><ellipse id="leftear" cx="-15.0" cy="110.0" rx="15.0" ry="15.0" fill="rgb(142,142,142)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="cx" from="-15.0" to="1185.0" begin="50ms" dur="2450ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="cy" from="110.0" to="110.0" begin="50ms" dur="2450ms" fill="freeze" />
+</ellipse><ellipse id="rightear" cx="15.0" cy="110.0" rx="15.0" ry="15.0" fill="rgb(142,142,142)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="cx" from="15.0" to="1215.0" begin="50ms" dur="2450ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="cy" from="110.0" to="110.0" begin="50ms" dur="2450ms" fill="freeze" />
+</ellipse><ellipse id="lefteye" cx="-10.0" cy="120.0" rx="5.0" ry="5.0" fill="rgb(0,0,0)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="cx" from="-10.0" to="1190.0" begin="50ms" dur="2450ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="cy" from="120.0" to="120.0" begin="50ms" dur="2450ms" fill="freeze" />
+</ellipse><ellipse id="righteye" cx="10.0" cy="120.0" rx="5.0" ry="5.0" fill="rgb(0,0,0)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="cx" from="10.0" to="1210.0" begin="50ms" dur="2450ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="cy" from="120.0" to="120.0" begin="50ms" dur="2450ms" fill="freeze" />
+</ellipse><rect id="mouth" x="-15.0" y="135.0" width="30.0" height="3.0" fill="rgb(0,0,0)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="x" from="-15.0" to="1185.0" begin="50ms" dur="2450ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="y" from="135.0" to="135.0" begin="50ms" dur="2450ms" fill="freeze" />
+</rect><rect id="star1" x="200.0" y="50.0" width="10.0" height="10.0" fill="rgb(255,255,255)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="width" from="10.0" to="15.0" begin="0ms" dur="1250ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="height" from="10.0" to="15.0" begin="0ms" dur="1250ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="width" from="15.0" to="10.0" begin="1300ms" dur="1200ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="height" from="15.0" to="10.0" begin="1300ms" dur="1200ms" fill="freeze" />
+</rect><rect id="star2" x="300.0" y="40.0" width="10.0" height="10.0" fill="rgb(255,255,255)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="width" from="10.0" to="15.0" begin="0ms" dur="1250ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="height" from="10.0" to="15.0" begin="0ms" dur="1250ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="width" from="15.0" to="10.0" begin="1300ms" dur="1200ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="height" from="15.0" to="10.0" begin="1300ms" dur="1200ms" fill="freeze" />
+</rect><rect id="star3" x="230.0" y="250.0" width="15.0" height="15.0" fill="rgb(255,255,255)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="width" from="15.0" to="10.0" begin="0ms" dur="1250ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="height" from="15.0" to="10.0" begin="0ms" dur="1250ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="width" from="10.0" to="15.0" begin="1300ms" dur="1200ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="height" from="10.0" to="15.0" begin="1300ms" dur="1200ms" fill="freeze" />
+</rect><rect id="star4" x="400.0" y="170.0" width="15.0" height="15.0" fill="rgb(255,255,255)" visibility="collapse" >
+	<set attributeName="visibility" to="visible" begin="0ms" end="2500ms" />
+
+	<animate attributeType="xml" attributeName="width" from="15.0" to="10.0" begin="0ms" dur="1250ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="height" from="15.0" to="10.0" begin="0ms" dur="1250ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="width" from="10.0" to="15.0" begin="1300ms" dur="1200ms" fill="freeze" />
+	<animate attributeType="xml" attributeName="height" from="10.0" to="15.0" begin="1300ms" dur="1200ms" fill="freeze" />
+</rect>
+</svg>

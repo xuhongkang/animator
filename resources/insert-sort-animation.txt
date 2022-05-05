@@ -1,0 +1,105 @@
+canvas 770 310
+rectangle name B7 min-x 10 min-y 170 width 50 height 140 color 0.23529412 0.7058824 0.39215687 from 1 to 850
+rectangle name B2 min-x 60 min-y 270 width 50 height 40 color 0.7058824 0.0 0.0 from 1 to 850
+rectangle name B12 min-x 110 min-y 70 width 50 height 240 color 0.7058824 0.0 0.0 from 1 to 850
+rectangle name B1 min-x 160 min-y 290 width 50 height 20 color 0.7058824 0.0 0.0 from 1 to 850
+rectangle name B15 min-x 210 min-y 10 width 50 height 300 color 0.7058824 0.0 0.0 from 1 to 850
+rectangle name B14 min-x 260 min-y 30 width 50 height 280 color 0.7058824 0.0 0.0 from 1 to 850
+rectangle name B6 min-x 310 min-y 190 width 50 height 120 color 0.7058824 0.0 0.0 from 1 to 850
+rectangle name B3 min-x 360 min-y 250 width 50 height 60 color 0.7058824 0.0 0.0 from 1 to 850
+rectangle name B13 min-x 410 min-y 50 width 50 height 260 color 0.7058824 0.0 0.0 from 1 to 850
+rectangle name B5 min-x 460 min-y 210 width 50 height 100 color 0.7058824 0.0 0.0 from 1 to 850
+rectangle name B9 min-x 510 min-y 130 width 50 height 180 color 0.7058824 0.0 0.0 from 1 to 850
+rectangle name B10 min-x 560 min-y 110 width 50 height 200 color 0.7058824 0.0 0.0 from 1 to 850
+rectangle name B8 min-x 610 min-y 150 width 50 height 160 color 0.7058824 0.0 0.0 from 1 to 850
+rectangle name B4 min-x 660 min-y 230 width 50 height 80 color 0.7058824 0.0 0.0 from 1 to 850
+rectangle name B11 min-x 710 min-y 90 width 50 height 220 color 0.7058824 0.0 0.0 from 1 to 850
+move name B7 moveto 10 170 60 170 from 5 to 55
+change-color name B2 colorto 0.7058824 0.0 0.0 0.3137255 0.39215687 1.0 from 5 to 6
+move name B2 moveto 60 270 10 270 from 5 to 55
+change-color name B2 colorto 0.3137255 0.39215687 1.0 0.23529412 0.7058824 0.39215687 from 60 to 61
+change-color name B12 colorto 0.7058824 0.0 0.0 0.3137255 0.39215687 1.0 from 60 to 61
+move name B2 moveto 10 270 60 270 from 115 to 165
+move name B7 moveto 60 170 110 170 from 115 to 165
+change-color name B12 colorto 0.3137255 0.39215687 1.0 0.23529412 0.7058824 0.39215687 from 115 to 116
+move name B12 moveto 110 70 160 70 from 115 to 165
+change-color name B1 colorto 0.7058824 0.0 0.0 0.3137255 0.39215687 1.0 from 115 to 116
+move name B1 moveto 160 290 10 290 from 115 to 165
+change-color name B1 colorto 0.3137255 0.39215687 1.0 0.23529412 0.7058824 0.39215687 from 170 to 171
+change-color name B15 colorto 0.7058824 0.0 0.0 0.3137255 0.39215687 1.0 from 170 to 171
+change-color name B15 colorto 0.3137255 0.39215687 1.0 0.23529412 0.7058824 0.39215687 from 225 to 226
+move name B15 moveto 210 10 260 10 from 225 to 275
+change-color name B14 colorto 0.7058824 0.0 0.0 0.3137255 0.39215687 1.0 from 225 to 226
+move name B14 moveto 260 30 210 30 from 225 to 275
+move name B7 moveto 110 170 160 170 from 280 to 330
+move name B12 moveto 160 70 210 70 from 280 to 330
+change-color name B14 colorto 0.3137255 0.39215687 1.0 0.23529412 0.7058824 0.39215687 from 280 to 281
+move name B14 moveto 210 30 260 30 from 280 to 330
+move name B15 moveto 260 10 310 10 from 280 to 330
+change-color name B6 colorto 0.7058824 0.0 0.0 0.3137255 0.39215687 1.0 from 280 to 281
+move name B6 moveto 310 190 110 190 from 280 to 330
+change-color name B6 colorto 0.3137255 0.39215687 1.0 0.23529412 0.7058824 0.39215687 from 335 to 336
+move name B6 moveto 110 190 160 190 from 335 to 385
+move name B7 moveto 160 170 210 170 from 335 to 385
+move name B12 moveto 210 70 260 70 from 335 to 385
+move name B14 moveto 260 30 310 30 from 335 to 385
+move name B15 moveto 310 10 360 10 from 335 to 385
+change-color name B3 colorto 0.7058824 0.0 0.0 0.3137255 0.39215687 1.0 from 335 to 336
+move name B3 moveto 360 250 110 250 from 335 to 385
+change-color name B3 colorto 0.3137255 0.39215687 1.0 0.23529412 0.7058824 0.39215687 from 390 to 391
+move name B14 moveto 310 30 360 30 from 390 to 440
+move name B15 moveto 360 10 410 10 from 390 to 440
+change-color name B13 colorto 0.7058824 0.0 0.0 0.3137255 0.39215687 1.0 from 390 to 391
+move name B13 moveto 410 50 310 50 from 390 to 440
+move name B6 moveto 160 190 210 190 from 445 to 495
+move name B7 moveto 210 170 260 170 from 445 to 495
+move name B12 moveto 260 70 310 70 from 445 to 495
+change-color name B13 colorto 0.3137255 0.39215687 1.0 0.23529412 0.7058824 0.39215687 from 445 to 446
+move name B13 moveto 310 50 360 50 from 445 to 495
+move name B14 moveto 360 30 410 30 from 445 to 495
+move name B15 moveto 410 10 460 10 from 445 to 495
+change-color name B5 colorto 0.7058824 0.0 0.0 0.3137255 0.39215687 1.0 from 445 to 446
+move name B5 moveto 460 210 160 210 from 445 to 495
+change-color name B5 colorto 0.3137255 0.39215687 1.0 0.23529412 0.7058824 0.39215687 from 500 to 501
+move name B12 moveto 310 70 360 70 from 500 to 550
+move name B13 moveto 360 50 410 50 from 500 to 550
+move name B14 moveto 410 30 460 30 from 500 to 550
+move name B15 moveto 460 10 510 10 from 500 to 550
+change-color name B9 colorto 0.7058824 0.0 0.0 0.3137255 0.39215687 1.0 from 500 to 501
+move name B9 moveto 510 130 310 130 from 500 to 550
+change-color name B9 colorto 0.3137255 0.39215687 1.0 0.23529412 0.7058824 0.39215687 from 555 to 556
+move name B12 moveto 360 70 410 70 from 555 to 605
+move name B13 moveto 410 50 460 50 from 555 to 605
+move name B14 moveto 460 30 510 30 from 555 to 605
+move name B15 moveto 510 10 560 10 from 555 to 605
+change-color name B10 colorto 0.7058824 0.0 0.0 0.3137255 0.39215687 1.0 from 555 to 556
+move name B10 moveto 560 110 360 110 from 555 to 605
+move name B9 moveto 310 130 360 130 from 610 to 660
+change-color name B10 colorto 0.3137255 0.39215687 1.0 0.23529412 0.7058824 0.39215687 from 610 to 611
+move name B10 moveto 360 110 410 110 from 610 to 660
+move name B12 moveto 410 70 460 70 from 610 to 660
+move name B13 moveto 460 50 510 50 from 610 to 660
+move name B14 moveto 510 30 560 30 from 610 to 660
+move name B15 moveto 560 10 610 10 from 610 to 660
+change-color name B8 colorto 0.7058824 0.0 0.0 0.3137255 0.39215687 1.0 from 610 to 611
+move name B8 moveto 610 150 310 150 from 610 to 660
+move name B5 moveto 160 210 210 210 from 665 to 715
+move name B6 moveto 210 190 260 190 from 665 to 715
+move name B7 moveto 260 170 310 170 from 665 to 715
+change-color name B8 colorto 0.3137255 0.39215687 1.0 0.23529412 0.7058824 0.39215687 from 665 to 666
+move name B8 moveto 310 150 360 150 from 665 to 715
+move name B9 moveto 360 130 410 130 from 665 to 715
+move name B10 moveto 410 110 460 110 from 665 to 715
+move name B12 moveto 460 70 510 70 from 665 to 715
+move name B13 moveto 510 50 560 50 from 665 to 715
+move name B14 moveto 560 30 610 30 from 665 to 715
+move name B15 moveto 610 10 660 10 from 665 to 715
+change-color name B4 colorto 0.7058824 0.0 0.0 0.3137255 0.39215687 1.0 from 665 to 666
+move name B4 moveto 660 230 160 230 from 665 to 715
+change-color name B4 colorto 0.3137255 0.39215687 1.0 0.23529412 0.7058824 0.39215687 from 720 to 721
+move name B12 moveto 510 70 560 70 from 720 to 770
+move name B13 moveto 560 50 610 50 from 720 to 770
+move name B14 moveto 610 30 660 30 from 720 to 770
+move name B15 moveto 660 10 710 10 from 720 to 770
+change-color name B11 colorto 0.7058824 0.0 0.0 0.3137255 0.39215687 1.0 from 720 to 721
+move name B11 moveto 710 90 510 90 from 720 to 770

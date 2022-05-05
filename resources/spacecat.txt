@@ -1,0 +1,42 @@
+canvas 1000 300
+rectangle name space min-x 0.0 min-y 0.0 width 1000000.0 height 100000.0 color 0.0 0.0 0.502 from 0 to 50
+rectangle name redstripe min-x -1300 min-y 100 width 1200.0 height 10.0 color 0.99 0.0 0.0 from 0 to 50
+rectangle name orangestripe min-x -1300 min-y 110 width 1200.0 height 10.0 color 0.99 0.743 0.0 from 0 to 50
+rectangle name yellowstripe min-x -1300 min-y 120 width 1200.0 height 10.0 color 0.99 0.99 0.0 from 0 to 50
+rectangle name greenstripe min-x -1300 min-y 130 width 1200.0 height 10.0 color 0.0 0.99 0.0 from 0 to 50
+rectangle name bluestripe min-x -1300 min-y 140 width 1200.0 height 10.0 color 0.0 0.0 0.99 from 0 to 50
+rectangle name purplestripe min-x -1300 min-y 150 width 1200.0 height 10.0 color 0.99 0.0 0.99 from 0 to 50
+rectangle name poptart min-x -100 min-y 100 width 100.0 height 60.0 color 0.823 0.706 0.549 from 0 to 50
+rectangle name icing min-x -95 min-y 105 width 90 height 50.0 color 0.99 0.714 0.757 from 0 to 50
+oval name head center-x 0 center-y 125.0 x-radius 30 y-radius 20 color 0.557 0.557 0.557 from 0 to 50
+oval name leftear center-x -15 center-y 110 x-radius 15 y-radius 15 color 0.557 0.557 0.557 from 0 to 50
+oval name rightear center-x 15.0 center-y 110 x-radius 15 y-radius 15 color 0.557 0.557 0.557 from 0 to 50
+oval name lefteye center-x -10 center-y 120.0 x-radius 5 y-radius 5 color 0.0 0.0 0.0 from 0 to 50
+oval name righteye center-x 10.0 center-y 120.0 x-radius 5 y-radius 5 color 0.0 0.0 0.0 from 0 to 50
+rectangle name mouth min-x -15 min-y 135 width 30 height 3 color 0.0 0.0 0.0 from 0 to 50
+rectangle name star1 min-x 200 min-y 50 width 10 height 10 color 1 1 1 from 0 to 50
+rectangle name star2 min-x 300 min-y 40 width 10 height 10 color 1 1 1 from 0 to 50
+rectangle name star3 min-x 230 min-y 250 width 15 height 15 color 1 1 1 from 0 to 50
+rectangle name star4 min-x 400 min-y 170 width 15 height 15 color 1 1 1 from 0 to 50
+move name redstripe moveto -1300 100 0 100 from 1 to 50
+move name orangestripe moveto -1300 110 0 110 from 1 to 50
+move name yellowstripe moveto -1300 120 0 120 from 1 to 50
+move name greenstripe moveto -1300 130 0 130 from 1 to 50
+move name bluestripe moveto -1300 140 0 140 from 1 to 50
+move name purplestripe moveto -1300 150 0 150 from 1 to 50
+move name poptart moveto -100 100 1100 100 from 1 to 50
+move name icing moveto -95 105 1105 105 from 1 to 50
+move name head moveto 0 125 1200 125 from 1 to 50
+move name leftear moveto -15 110 1185 110 from 1 to 50
+move name rightear moveto 15 110 1215 110 from 1 to 50
+move name lefteye moveto -10 120 1190 120 from 1 to 50
+move name righteye moveto 10 120 1210 120 from 1 to 50
+move name mouth moveto -15 135 1185 135 from 1 to 50
+scale name star1 scaleto 10 10 15 15 from 0 to 25
+scale name star1 scaleto 15 15 10 10 from 26 to 50
+scale name star2 scaleto 10 10 15 15 from 0 to 25
+scale name star2 scaleto 15 15 10 10 from 26 to 50
+scale name star3 scaleto 15 15 10 10 from 0 to 25
+scale name star3 scaleto 10 10 15 15 from 26 to 50
+scale name star4 scaleto 15 15 10 10 from 0 to 25
+scale name star4 scaleto 10 10 15 15 from 26 to 50

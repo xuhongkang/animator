@@ -1,0 +1,186 @@
+Various notes on the Project / questions for the professor:
+
+
+Seperate package for animation command?
+
+Shape class, then shape type enum.
+
+Similar to frecell, game, MVC pattern
+
+No "do nothing" command
+look into interpolation (formulas online for this)
+
+Nothing stopping a shape from having two different commands executing at the same time...
+E.G. move and change color.
+Perhaps split the command lists into seperate lists by AnimationType?
+
+Also how to do the variatic ints for size?
+(how to know when to stop reading input from user for a shape?)
+- perhaps need to supply them as 1 string, which gets parsed later on (eg: "10,12" for rectangle)
+
+Should the background be a shape?
+
+//todo Ability to change drawing order of shapes? (essentially a priority of the shapes?)
+probably add to AnimatedShape? I don't think it's needed in Shape
+
+Nested builder class for a shape (to set some/all the values, potentially with defaults)?
+
+Rethink animation commands
+
+Implementation Tasks
+Andrew: AnimatedShape downwards (AniCommand, AbstractAniCommand, 3 AniCommands), ShapeType
+Allison: SimpleModel, Position2D, Shape
+
+Things to fix from class:
+remove a command from a shape (how to do this?
+check bounds for each add animation command
+
+
+Shape class, value class,
+  yes methods should be public (safe because it's a value class)
+Size as a list of Integer?
+  could just remove the 1D shapes and foce user to use the 2D ones.
+  priority esk, thing later on potentially for extra credit.
+AbstractAniCommand, why has to be public method?
+  artifact from interface, as long as class is package private it's fine
+Should a shape be constructed with it's endtime? (if not, can't make final...) up to you.
+  may have to play with in assignment 5, ok for now.
+Does an AnimatedShape need an interface?
+  no, not if it's package private
+AdjacentCommand checking uses instance of in the 3 classes
+ alternative is make enum and pass it alongside the cmd, but this is fine
+ the enum is sort of going around the problem of typed classes
+
+
+ Notes from class:
+ wrap JPanel in scrollPane to enable scrolling
+ users should be able to resize window
+ 0,0 for a shape is the upper left corner
+ can assume everyone is on board w/ screen-based coordinates
+ view needs setter methods to set the state of the things to draw,
+   or give it access to a readOnly model and have it call the getter methods.
+   have a helper to only call the model when the tick has changed? (maybe not)
+ test the cmd line args
+ new dir resources/ (same level as src/ and test/) put README, .jar in there
+ At some level, all view implement the same view interface (but may want herirarchy of interfaces)
+
+THINGS TO REFACTOR:
+- model doesn't take in an animation duration, instead extends the duration to the end of the last added shape
+  may not even need duration in the model...
+- change sizes to just be width and height, instead of list
+- change position2D to be floats, eventually will need to cast to int when drawing in view...
+- Position2D can be negative
+
+
+Questions for OH:
+- SVG animation; parsing strings? Is there a better way?
+ - should use the power of java,
+- can one <animate> control multiple vars?
+  try?
+- regular text output, give ticks per second?
+ - view should take in the tps
+- Does the controller manage the speed? with sleep?
+ - swing timer
+ - java.swing.Timer
+- toh: what are they? can a shape be outside the window?
+- what tests, for svg/text output?
+ - assert on the string
+  - cmd line arg for where to write
+- what tests for swing animation?
+ - check correct number of refreshees?
+
+- issues
+ - remake svg code
+ - buildings.txt animation not being drawn properly? seems like the drawing order is messed up
+ - swing animation not scrollable
+ - need more tests / better so they don't keep breaking?
+ - main method (+ writing to files)
+ - factory for view, takes in the string and gives you back that object
+ - view interfaces, collapse into 1 interface? (then have abstract that does nothing / unsupportedOperationException)
+ - in order to make svg work, had to make AniCommand and AniShape public (so need tests)
+
+
+OH Notes/Questions
+- svg animation and opening up classes to be public, should the interface be
+  barebones and the model use the concrete classes?
+- Main timer, is it the correct functionality.
+- Only shapes in the rendering canvas should be shown at any point of time.
+  But what if make the pane larger by dragging?
+  methods on graphics to clip drawing area.
+  setsize/setmaxsize (don't need to check shape position in that case)
+  g2.clipRect
+  test with large preferred size
+
+Future changes
+- for animatedShape, use an ordered hashmap (hashTree or something similar), use the starting
+time as the index into the tree, and have it store the starting value,
+so that can easily interpolate to final value. Remove the AniCommand and just have it be an enum?
+See notebook from 3/22/22
+
+
+ Assignment 6
+
+ Part 2:
+ interactive view elements:
+ buttons at the top for start,stop, loop(+field) restart,
+ speed controls on tht left side (buttons for speed up/down + field to display current speed)
+ Directions on the right (showing keybinds for buttons)
+ Keybinds for all the buttons (spacebar = start/stop, R = restart, l=loop), up/down arrow for speed
+ mouse listener: ??? how to use. potentially pause the animation when the mouse leaves the window
+               check if need to use for clicking the buttons
+
+ Part 4: animation ideas
+ - different sorting algorithms (with rectanles and color), can be programatic
+ - building a picture (like night sky)
+
+
+ - do we need to use each of : buttons, key listener, mouse listener?
+   - don't have to do the mouse listener
+ - Shape rework to be an interface
+   - it's fine as is
+ - what testing is required? to what extent (/additional extent) do we test the views/controller?
+   - controller functionality
+   - mock view testing (supply an input and expect the view call the right controller function)
+   - mock view w/ the real controller, view appends calls to a log
+ - should the view implement action listener or the controller?
+  - view implements the action listener
+  - map would live in the view package, or could do a switch statement
+
+//todo fixme questions for TA / professor
+- Keyboard shortcuts along with buttons?
+  - fine w/o
+- different controllers, or just 1 controller
+ - if can, do 1
+- seperate class for ActionListener implementation?
+ - if simple don't need to
+- if displaying tps visually, should that be a method in the view interface? (default methods)
+ - standard java library, throw exception in default (don't just do nothing)
+- how to test the controller feature methods? And in general
+
+- enhance animations?
+- remove SimpleAnimatorController
+- potential other view extensions
+  - display tps & have input box for user to set tps (up to you)
+  - display looping status
+- testing (not much here)
+- read over assignment description + readme?
+- checkbox for looping,
+- restart also starts the timer
+
+to test:
+- controller
+ - constructor
+- view
+ - constructor
+ - mock view & actual controller
+  - instead of view doing stuff, it just appends to a log that you can check.
+  - eg: call the restart method in the controller, then check the view to see if the log for refresh
+  went to 0
+  - attend OH to learn more about what to test
+
+ Next meeting
+ Tuesday 4/19/22, for sent-code submission and to discuss provided-code
+ @ some time
+
+
+
