@@ -1,54 +1,52 @@
-Animator project description
+## Animator + Project Description
+Design: Hongkang Xu
+Testing: Shengjun Sun
 
+### ASSIGNMENT 8 DESCRIPTION:
 For this assignment, we had to implement a new add-layer 
 functionality as well as a new realtime add-shape/motion/layer functionality
 for the interactive view. We decided to approach these issues in the following ways:
-
-ASSIGNMENT 8 DESCRIPTION:
 1 Level 1: New shape and UI improvements
-In this level, you must add support for a new shape: the plus sign. The plus sign contains a horizontal and vertical bar with a common center. By default, one can imagine the plus to be tightly enclosed with a square. The vertical sides of the horizontal bar should be half the height of this square, while the horizontal sides of the vertical bar should be half the width of this square. In other words, the dimensions of the plus are relative to the box that encloses it.
 
-Your program should not only support drawing this shape, but also being able to move or scale it (scaling the dimensions of the shape amounts to scaling the bounding square as explained above, and the proportions above should be retained).
+In this level, we add support for a new shape: the plus sign. The plus sign contains a horizontal and vertical bar with a common center. By default, one can imagine the plus to be tightly enclosed with a square. The vertical sides of the horizontal bar should be half the height of this square, while the horizontal sides of the vertical bar should be half the width of this square. In other words, the dimensions of the plus are relative to the box that encloses it.
+
+Our program should not only support drawing this shape, but also being able to move or scale it (scaling the dimensions of the shape amounts to scaling the bounding square as explained above, and the proportions above should be retained).
 
 In addition to this, this level must also support a new UI feature. One should be able to toggle the drawing of all shapes in ''fill" vs ''outline" mode. In outline mode, each shape should be drawn only using its outlines (the plus symbol should have its proper outline, no ''square in the middle). The color of the outline should match the color of the shape, but you can use any suitable value for the thickness of the outline.
 
-Completion of this feature will be evidenced by the following features in your program:
+Completion of this feature will be evidenced by the following features in our program:
 
 The ability for a user to toggle between outline and fill modes using the user interface only in the interactive view.
 
-The ability of your program to show the new shape in an animation in your interactive view.
+The ability of our program to show the new shape in an animation in your interactive view.
 
-The ability of your program to show the new shape correctly in an SVG file produced by your program.
+The ability of our program to show the new shape correctly in an SVG file produced by your program.
 
-The ability of your program to accept this shape as part of an input file: this must be an extension , not a replacement , of the existing file format.
-
-You should have at least 2 example input files and one SVG file to show during your demo.
+The ability of our program to accept this shape as part of an input file: this must be an extension , not a replacement , of the existing file format.
 
 2 Level 2: Discrete-time playing of animation
 Sometimes it is quicker to view an entire animation using a few discrete frames, rather than play the entire animation at the given speed. An example of this may be when we fast-forward a movie on Netflix, and watch individual frames go by rather than seeing a smooth but fast play.
 
-In this tier you will add such a discrete way of playing your animation in the interactive view. More specifically, your view should display only the frames at the start and the end of any motion. If these times happen to be in the middle of other motions, the frame should show the correct interpolated states for those shapes. You may play these discrete frames at a suitable tempo: it is not necessary to be able to interactively increase and decrease the speed of this discrete playing.
+In this tier we will add such a discrete way of playing your animation in the interactive view. More specifically, our view should display only the frames at the start and the end of any motion. If these times happen to be in the middle of other motions, the frame should show the correct interpolated states for those shapes. You may play these discrete frames at a suitable tempo: it is not necessary to be able to interactively increase and decrease the speed of this discrete playing.
 
-Completion of this feature will be evidenced by the following features in your program:
+Completion of this feature will be evidenced by the following features in our program:
 
 The ability to start, pause, resume and stop the discrete playing of an animation.
 
 The ability to switch between discrete and continuous playing of an animation without having to restart the program or reload the animation.
 
-Retain all existing abilities of your interactive view.
+Retain all existing abilities of our interactive view.
 
 3 Level 3: Slo-mo animation
-Creating a ''slo-mo" video is a feature on many smart phones. The user can record a video normally, and then edit the video so that different parts of it can be played at different speeds. This allows the viewer to see an important part of the video in slow motion, adding focus on that part. In this part, you must enhance your program to play an animation in slow motion snippets similarly.
+Creating a ''slo-mo" video is a feature on many smart phones. The user can record a video normally, and then edit the video so that different parts of it can be played at different speeds. This allows the viewer to see an important part of the video in slow motion, adding focus on that part. In this part, we must enhance our program to play an animation in slow motion snippets similarly.
 
-Completion of this feature will be evidenced by the following features in your program:
+Completion of this feature will be evidenced by the following features in our program:
 
-The ability of an input file to take in the slow-motion information. Specifically you will have to specify several (time-interval: tempo) instances for an animation. Since the tempo information is currently not part of the input files for the animation, you have two options. You can add this information to the existing input file format, or you can add this in a separate file and load it separately for an animation.
+The ability of an input file to take in the slow-motion information. Specifically we will have to specify several (time-interval: tempo) instances for an animation. Since the tempo information is currently not part of the input files for the animation, we have two options. We can either add this information to the existing input file format, or we can add this in a separate file and load it separately for an animation.
 
-The ability of your program to play the animation in slow motion according to the inputs, in your interactive view. You do not have to support this feature for the other views, including the visual view.
+The ability of our program to play the animation in slow motion according to the inputs, in our interactive view. We do not have to support this feature for the other views, including the visual view.
 
-You should have at least one set of inputs for a single animation for your demo. It must show at least 2 parts in slow-motion, and should include at least 1 part at its ''original" speed.
-
-ASSIGNMENT 7 DESCRIPTION:
+### ASSIGNMENT 7 DESCRIPTION:
 1. Add-Layer
 A new layer must select a group of shapes to add. The model must store the names of these
 layers and draw them according the order they were created. Also, shapes that were not
@@ -99,7 +97,7 @@ command was attempting to be added. Thus, the model will keep running alongside 
 commands will not be added. Thus, any existing command in the previous implementation can now be run and
 "edited upon" in realtime in this implementation.
 
-ASSIGNMENT 6 DESCRIPTION / FILE LIST:
+### ASSIGNMENT 6 DESCRIPTION / FILE LIST:
 Changelog from assignment 5:
 - Enhanced main method (RunAnimation) to support the new interactive view.
 - Enhanced AnimatorViewCreator to add ability to create interactive view.
@@ -152,7 +150,7 @@ New Class Descriptions:
   Implementation of Simple Animator View. Plays the animation and creates buttons to allow for user
   interaction.
 
-ASSIGNMENT 5 DESCRIPTION / FILE LIST:
+### ASSIGNMENT 5 DESCRIPTION / FILE LIST:
 Changelog from assignment 4:
 - changed View interface name and implementation name to fit the new interface and implementations
 - Changed model to not take in an animation duration
@@ -271,7 +269,7 @@ Class Descriptions:
 
 
 
-ASSIGNMENT 4 DESCRIPTION / FILE LIST:
+### ASSIGNMENT 4 DESCRIPTION / FILE LIST:
 High-level Description:
 
 The model stores shapes and animations applied to them. Shapes and animations can be added to and
